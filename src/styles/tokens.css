@@ -1,32 +1,34 @@
 :root {
-  /* surfaces */
-  --color-bg: #05070c;
-  --color-bg-elevated: #0a0e18;
-  --color-surface: rgba(14, 19, 32, 0.72);
-  --color-surface-solid: #0e1320;
-  --color-border: rgba(120, 150, 210, 0.16);
-  --color-border-strong: rgba(140, 170, 230, 0.32);
+  /* surfaces — deliberately low-luminance: the globe is the only thing on
+     screen that should read as lit, and panels float over it at night-time
+     brightness rather than competing with it. */
+  --color-bg: #02040a;
+  --color-bg-elevated: #060911;
+  --color-surface: rgba(8, 12, 21, 0.82);
+  --color-surface-solid: #080c15;
+  --color-border: rgba(104, 130, 184, 0.13);
+  --color-border-strong: rgba(120, 148, 202, 0.24);
 
   /* text */
-  --color-text: #eef1f8;
-  --color-text-muted: #93a0b8;
-  --color-text-faint: #5c6780;
+  --color-text: #c8cfdd;
+  --color-text-muted: #78849c;
+  --color-text-faint: #4b556c;
 
   /* accent */
-  --color-accent: #5b8cff;
-  --color-accent-bright: #8fb4ff;
-  --color-accent-dim: rgba(91, 140, 255, 0.14);
-  --color-accent-glow: rgba(91, 140, 255, 0.35);
+  --color-accent: #4571d6;
+  --color-accent-bright: #7b9de8;
+  --color-accent-dim: rgba(69, 113, 214, 0.12);
+  --color-accent-glow: rgba(69, 113, 214, 0.26);
 
   /* semantic */
-  --color-positive: #4fd1a5;
-  --color-warning: #e0b563;
-  --color-conflict: #e0637a;
-  --color-disputed: #d9a441;
+  --color-positive: #3ea888;
+  --color-warning: #bd9552;
+  --color-conflict: #bd5468;
+  --color-disputed: #b58838;
 
   /* elevation */
-  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255, 255, 255, 0.03) inset;
-  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.02) inset;
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.45);
 
   /* radii */
   --radius-sm: 6px;

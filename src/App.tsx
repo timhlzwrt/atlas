@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import type { GlobeHandle } from './components/Globe/Globe';
+import { GlobeControls } from './components/Globe/GlobeControls';
 import { CountryCard } from './components/CountryCard/CountryCard';
 import { Search } from './components/Search/Search';
 import { Timeline } from './components/Timeline/Timeline';
@@ -28,7 +29,7 @@ export default function App() {
   const globeRef = useRef<GlobeHandle>(null);
   const selectedCountryId = useSelectionStore((s) => s.selectedCountryId);
   const selectCountry = useSelectionStore((s) => s.selectCountry);
-  const selectedEventId = useTimeStore((s) => s.selectedEventId);
+  const selectedDate = useTimeStore((s) => s.selectedDate);
   const mode = useTimeStore((s) => s.mode);
 
   useEffect(() => {
@@ -44,7 +45,6 @@ export default function App() {
     [countryIndex],
   );
   const selectedCountry = selectedCountryId ? countryMap.get(selectedCountryId) : null;
-  const selectedEvent = selectedEventId ? events.find((e) => e.id === selectedEventId) : null;
 
   const goTo = (id: string) => {
     selectCountry(id);
@@ -69,7 +69,8 @@ export default function App() {
             Sources
           </button>
           <span className="app-header__date">
-            {mode === 'historical' && selectedEvent ? selectedEvent.date.slice(0, 4) : new Date().getFullYear()}
+            {/* selectedDate covers leadership markers too, which have no curated event behind them. */}
+            {mode === 'historical' ? selectedDate.slice(0, 4) : new Date().getFullYear()}
           </span>
         </div>
       </header>
@@ -107,6 +108,8 @@ export default function App() {
           </div>
         )}
       </main>
+
+      {!loading && <GlobeControls />}
 
       <footer className="app-footer">
         <Timeline events={events} selectedCountryId={selectedCountryId} selectedCountryName={selectedCountry?.name ?? null} />

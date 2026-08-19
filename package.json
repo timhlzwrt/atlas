@@ -8,8 +8,9 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "data:build": "tsx data-pipeline/build-countries.ts && tsx data-pipeline/build-curated.ts",
-    "data:build:fresh": "DATA_FRESH=1 tsx data-pipeline/build-countries.ts && tsx data-pipeline/build-curated.ts",
+    "data:build": "tsx data-pipeline/build-countries.ts && tsx data-pipeline/build-curated.ts && tsx data-pipeline/build-politics.ts",
+    "data:build:fresh": "DATA_FRESH=1 tsx data-pipeline/build-countries.ts && tsx data-pipeline/build-curated.ts && tsx data-pipeline/build-politics.ts",
+    "data:politics": "tsx data-pipeline/build-politics.ts",
     "typecheck:pipeline": "tsc -p tsconfig.pipeline.json",
     "typecheck:functions": "tsc -p tsconfig.functions.json"
   },

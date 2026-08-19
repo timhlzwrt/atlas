@@ -1,8 +1,9 @@
 import { useEffect, useState, type ReactNode } from 'react';
 import { useSelectionStore } from '../../state/selectionStore';
 import { useLayersStore } from '../../state/layersStore';
-import { fetchCountry } from '../../lib/api';
-import type { CountryProfile, GeoEvent, RelationshipType } from '../../types/domain';
+import { fetchCountry, fetchPoliticalHistory } from '../../lib/api';
+import { ATLAS_START_YEAR } from '../../state/timeStore';
+import type { CountryProfile, GeoEvent, LeadershipTerm, PoliticalHistory, RelationshipType } from '../../types/domain';
 import { StatItem } from './StatItem';
 import { formatCompact, formatCurrencyCompact, formatNumber, formatPercent } from './formatters';
 import { NewsList } from '../News/NewsList';
@@ -32,6 +33,7 @@ interface CountryCardProps {
 
 export function CountryCard({ countryId, events, onSelectCountry }: CountryCardProps) {
   const [profile, setProfile] = useState<CountryProfile | null>(null);
+  const [politics, setPolitics] = useState<PoliticalHistory | null>(null);
   const [error, setError] = useState(false);
   const expanded = useSelectionStore((s) => s.cardExpanded);
   const setExpanded = useSelectionStore((s) => s.setCardExpanded);
@@ -40,10 +42,18 @@ export function CountryCard({ countryId, events, onSelectCountry }: CountryCardP
 
   useEffect(() => {
     setProfile(null);
+    setPolitics(null);
     setError(false);
     fetchCountry(countryId)
       .then(setProfile)
       .catch(() => setError(true));
+    let active = true;
+    fetchPoliticalHistory(countryId).then((history) => {
+      if (active) setPolitics(history);
+    });
+    return () => {
+      active = false;
+    };
   }, [countryId]);
 
   if (error) {
@@ -164,6 +174,14 @@ export function CountryCard({ countryId, events, onSelectCountry }: CountryCardP
             )}
           </Section>
 
+          <Section title={`Who governed since ${ATLAS_START_YEAR}`}>
+            {politics && politics.terms.length ? (
+              <LeadershipRecord history={politics} />
+            ) : (
+              <p className="section-hint">No leadership record available for this country.</p>
+            )}
+          </Section>
+
           <Section title="Geography">
             <div className="stat-grid">
               <div className="stat-item">
@@ -229,6 +247,80 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
       <h3>{title}</h3>
       {children}
     </section>
+  );
+}
+
+/**
+ * The full post-1945 officeholder list, split by role. Heads of government
+ * change far more often than heads of state, so each column is scrolled
+ * independently rather than interleaved into one long list.
+ */
+function LeadershipRecord({ history }: { history: PoliticalHistory }) {
+  const [role, setRole] = useState<'head-of-government' | 'head-of-state'>(
+    history.terms.some((t) => t.role === 'head-of-government') ? 'head-of-government' : 'head-of-state',
+  );
+  const terms = history.terms.filter((t) => t.role === role);
+
+  return (
+    <div className="leadership">
+      <div className="leadership__tabs">
+        <button
+          className={role === 'head-of-government' ? 'active' : ''}
+          onClick={() => setRole('head-of-government')}
+          disabled={!history.terms.some((t) => t.role === 'head-of-government')}
+        >
+          Heads of government
+        </button>
+        <button
+          className={role === 'head-of-state' ? 'active' : ''}
+          onClick={() => setRole('head-of-state')}
+          disabled={!history.terms.some((t) => t.role === 'head-of-state')}
+        >
+          Heads of state
+        </button>
+      </div>
+
+      <ol className="leadership__list scroll-thin">
+        {terms.map((term) => (
+          <TermRow key={term.id} term={term} />
+        ))}
+      </ol>
+
+      <p className="section-hint">
+        {terms.length} terms · {history.elections.length} linked elections · source:{' '}
+        <a href={history.sources[0]?.url} target="_blank" rel="noreferrer noopener">
+          Wikidata
+        </a>
+      </p>
+    </div>
+  );
+}
+
+function TermRow({ term }: { term: LeadershipTerm }) {
+  return (
+    <li className={`leadership__term ${term.end ? '' : 'leadership__term--current'}`}>
+      <span className="leadership__years">
+        {term.start?.slice(0, 4) ?? '?'}
+        <span className="leadership__years-sep">–</span>
+        {term.end ? term.end.slice(0, 4) : 'now'}
+      </span>
+      <span className="leadership__detail">
+        <span className="leadership__person">{term.person}</span>
+        <span className="leadership__meta">
+          {term.office}
+          {term.party ? ` · ${term.party}` : ''}
+        </span>
+        {term.elections.length > 0 && (
+          <span className="leadership__elections">
+            {term.elections.map((e) => (
+              <span key={e.id} className="leadership__election">
+                {e.date.slice(0, 4)} {e.label.replace(/^\d{4}\s+/, '')}
+              </span>
+            ))}
+          </span>
+        )}
+      </span>
+    </li>
   );
 }
 
