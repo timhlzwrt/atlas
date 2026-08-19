@@ -49,24 +49,51 @@
   cursor: pointer;
 }
 
+.timeline__header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.timeline__politics-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+.timeline__politics-toggle input {
+  accent-color: var(--color-accent);
+  margin: 0;
+}
+
+/* Tall enough for the three marker lanes the layout can stack into. */
 .timeline__track {
   position: relative;
-  height: 24px;
+  height: 56px;
 }
 
 .timeline__line {
   position: absolute;
-  top: 50%;
+  top: 18px;
   left: 0;
   right: 0;
   height: 1px;
-  background: var(--color-border-strong);
-  transform: translateY(-50%);
+  background: var(--color-border);
+}
+
+.timeline__tick {
+  position: absolute;
+  top: 12px;
+  width: 1px;
+  height: 7px;
+  background: var(--color-border);
 }
 
 .timeline__marker {
   position: absolute;
-  top: 50%;
+  top: 18px;
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -91,13 +118,35 @@
   transform: translate(-50%, -50%) scale(1.4);
 }
 .timeline__marker--active {
-  background: #fff;
+  background: var(--color-text);
   box-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+/* Leadership markers read as a different class of fact from world events. */
+.timeline__marker--term {
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: var(--color-text-faint);
+  box-shadow: none;
+}
+.timeline__marker--term.timeline__marker--imp2 {
+  width: 7px;
+  height: 7px;
+  background: var(--color-positive);
+}
+.timeline__marker--election {
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  background: none;
+  border: 1px solid var(--color-warning);
+  box-shadow: none;
 }
 
 .timeline__now {
   position: absolute;
-  top: 50%;
+  top: 18px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -107,12 +156,23 @@
 }
 
 .timeline__axis {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4px;
+  position: relative;
+  height: 14px;
+  margin-top: 2px;
   font-size: 10px;
   color: var(--color-text-faint);
   font-family: var(--font-mono);
+}
+
+.timeline__axis-mark {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.timeline__axis-now {
+  position: absolute;
+  right: 0;
+  color: var(--color-positive);
 }
 
 .timeline__popover {
@@ -127,6 +187,14 @@
   box-shadow: var(--shadow-card);
   padding: var(--space-4);
   animation: card-in var(--dur-med) var(--ease-out);
+}
+
+.timeline__popover-kicker {
+  margin: 0 0 2px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
 }
 
 .timeline__popover h4 {

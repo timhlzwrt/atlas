@@ -18,14 +18,7 @@ export async function cachedFetchJson<T>(url: string, cacheKey: string, init?: R
   if (!FRESH && existsSync(cachePath)) {
     return JSON.parse(await readFile(cachePath, 'utf-8')) as T;
   }
-  const res = await fetch(url, {
-    ...init,
-    headers: { 'User-Agent': USER_AGENT, Accept: 'application/json', ...(init?.headers ?? {}) },
-  });
-  if (!res.ok) {
-    throw new Error(`Fetch failed (${res.status} ${res.statusText}) for ${url}`);
-  }
-  const text = await res.text();
+  const text = await fetchWithRetry(url, init);
   let json: T;
   try {
     json = JSON.parse(text);
@@ -34,6 +27,36 @@ export async function cachedFetchJson<T>(url: string, cacheKey: string, init?: R
   }
   await writeFile(cachePath, JSON.stringify(json), 'utf-8');
   return json;
+}
+
+
+/** Statuses worth another attempt: rate limiting and the gateway errors WDQS
+ * returns under load. Anything else (404, malformed query) will fail again. */
+const RETRYABLE = new Set([429, 500, 502, 503, 504]);
+const MAX_ATTEMPTS = 5;
+
+async function fetchWithRetry(url: string, init?: RequestInit): Promise<string> {
+  let lastError = '';
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    let res: Response;
+    try {
+      res = await fetch(url, {
+        ...init,
+        headers: { 'User-Agent': USER_AGENT, Accept: 'application/json', ...(init?.headers ?? {}) },
+      });
+    } catch (err) {
+      lastError = `network error: ${(err as Error).message}`;
+      await sleep(attempt * 3000);
+      continue;
+    }
+    if (res.ok) return res.text();
+    lastError = `${res.status} ${res.statusText}`;
+    if (!RETRYABLE.has(res.status) || attempt === MAX_ATTEMPTS) break;
+    const backoff = attempt * 5000;
+    console.warn(`  retrying after ${lastError} (attempt ${attempt}/${MAX_ATTEMPTS}, waiting ${backoff / 1000}s)`);
+    await sleep(backoff);
+  }
+  throw new Error(`Fetch failed (${lastError}) for ${url}`);
 }
 
 const WDQS = 'https://query.wikidata.org/sparql';

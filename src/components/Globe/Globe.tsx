@@ -4,7 +4,8 @@ import * as THREE from 'three';
 import { useSelectionStore } from '../../state/selectionStore';
 import { useLayersStore } from '../../state/layersStore';
 import type { CountryIndexEntry } from '../../lib/api';
-import { GLOBE_THEME } from './globeTheme';
+import { useGlobeStore } from '../../state/globeStore';
+import { GLOBE_THEME, SURFACE_STYLES } from './globeTheme';
 import type { Relationship } from '../../types/domain';
 import type { CountryFeature, WorldGeometry } from '../../types/geo';
 import './globe.css';
@@ -19,12 +20,29 @@ interface GlobeProps {
 }
 
 const CARD_MARGIN = 140;
+const EDGE_PADDING = 16;
 
 export interface GlobeHandle {
   flyToCountry: (id: string, altitude?: number) => void;
 }
 
 const INITIAL_VIEW = { lat: 20, lng: 10, altitude: 2.4 };
+
+/**
+ * Globe textures are multi-megabyte and their URLs are a fixed set, so decode
+ * them once for the lifetime of the page instead of per material rebuild.
+ */
+const textureCache = new Map<string, THREE.Texture>();
+
+function loadTexture(url: string, isColorMap: boolean): THREE.Texture {
+  let texture = textureCache.get(url);
+  if (!texture) {
+    texture = new THREE.TextureLoader().load(url);
+    if (isColorMap) texture.colorSpace = THREE.SRGBColorSpace;
+    textureCache.set(url, texture);
+  }
+  return texture;
+}
 
 const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
   { geometry, countryIndex, disputedIds, relationships, children },
@@ -96,7 +114,12 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       const [lng, lat] = centroid;
       const { x, y } = globeRef.current.getScreenCoords(lat, lng, 0.02);
       const clampedX = Math.min(Math.max(x, CARD_MARGIN), size.width - CARD_MARGIN);
-      const clampedY = Math.min(Math.max(y, CARD_MARGIN), size.height - CARD_MARGIN);
+      // The card is vertically centred on the anchor, so clamp against its real
+      // height — an expanded card is several hundred pixels tall and would
+      // otherwise hang off the top of the viewport for northern countries.
+      const cardHalfHeight = (anchor.firstElementChild?.clientHeight ?? 0) / 2;
+      const yMargin = Math.max(CARD_MARGIN, cardHalfHeight + EDGE_PADDING);
+      const clampedY = Math.min(Math.max(y, yMargin), size.height - yMargin);
       anchor.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
       anchor.style.opacity = '1';
       anchor.dataset.side = clampedX > size.width / 2 ? 'left' : 'right';
@@ -105,36 +128,46 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
     return () => cancelAnimationFrame(rafRef.current);
   }, [selectedCountryId, countryIndex, size]);
 
+  const surface = useGlobeStore((s) => s.surface);
+  const brightness = useGlobeStore((s) => s.brightness);
+  const style = SURFACE_STYLES[surface];
+
+  // Brightness tints the material colour, which multiplies the texture. The
+  // material is cheap to rebuild per slider step only because the textures
+  // themselves are cached across rebuilds.
   const globeMaterial = useMemo(
     () =>
       new THREE.MeshPhongMaterial({
-        color: new THREE.Color(GLOBE_THEME.globeBase),
-        shininess: 4,
+        shininess: 3,
+        color: new THREE.Color(style.base).multiplyScalar(brightness),
+        map: style.texture ? loadTexture(style.texture, true) : null,
+        bumpMap: style.bump ? loadTexture(style.bump, false) : null,
+        bumpScale: 8,
       }),
-    [],
+    [style.base, style.texture, style.bump, brightness],
   );
 
   const capColor = useCallback(
     (feat: object) => {
       const f = feat as CountryFeature;
       const id = f.properties.id;
-      if (id === selectedCountryId) return GLOBE_THEME.landSelected;
-      if (id === hoveredCountryId) return GLOBE_THEME.landHover;
-      if (disputedIds.has(id)) return GLOBE_THEME.landDisputed;
-      return GLOBE_THEME.landDefault;
+      if (id === selectedCountryId) return style.landSelected;
+      if (id === hoveredCountryId) return style.landHover;
+      if (disputedIds.has(id)) return style.landDisputed;
+      return style.landDefault;
     },
-    [selectedCountryId, hoveredCountryId, disputedIds],
+    [selectedCountryId, hoveredCountryId, disputedIds, style],
   );
 
   const strokeColor = useCallback(
     (feat: object) => {
       const f = feat as CountryFeature;
       const id = f.properties.id;
-      if (id === selectedCountryId) return GLOBE_THEME.strokeSelected;
-      if (id === hoveredCountryId) return GLOBE_THEME.strokeHover;
-      return GLOBE_THEME.strokeDefault;
+      if (id === selectedCountryId) return style.strokeSelected;
+      if (id === hoveredCountryId) return style.strokeHover;
+      return style.strokeDefault;
     },
-    [selectedCountryId, hoveredCountryId],
+    [selectedCountryId, hoveredCountryId, style],
   );
 
   const altitude = useCallback(
@@ -190,13 +223,13 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
         backgroundColor={GLOBE_THEME.backgroundColor}
         globeMaterial={globeMaterial}
         showAtmosphere
-        atmosphereColor={GLOBE_THEME.atmosphere}
+        atmosphereColor={style.atmosphere}
         atmosphereAltitude={GLOBE_THEME.atmosphereAltitude}
         showGraticules={false}
         polygonsData={geometry?.features ?? []}
         polygonGeoJsonGeometry="geometry"
         polygonCapColor={capColor}
-        polygonSideColor={() => 'rgba(6, 12, 24, 0.6)'}
+        polygonSideColor={() => (style.texture ? 'rgba(10, 18, 34, 0.25)' : 'rgba(4, 8, 18, 0.6)')}
         polygonStrokeColor={strokeColor}
         polygonAltitude={altitude}
         polygonsTransitionDuration={220}

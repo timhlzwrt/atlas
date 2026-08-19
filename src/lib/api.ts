@@ -1,4 +1,4 @@
-import type { CountryProfile, GeoEvent, NewsResponse, Relationship, RecognitionStatus } from '../types/domain';
+import type { CountryProfile, GeoEvent, NewsResponse, PoliticalHistory, Relationship, RecognitionStatus } from '../types/domain';
 import type { WorldGeometry } from '../types/geo';
 
 export interface CountryIndexEntry {
@@ -32,6 +32,20 @@ export function fetchCountry(id: string): Promise<CountryProfile> {
   if (!cached) {
     cached = getJson<CountryProfile>(`/data/countries/${id}.json`);
     countryCache.set(id, cached);
+  }
+  return cached;
+}
+
+/**
+ * Post-1945 leadership record. Countries with no Wikidata coverage have no
+ * file at all, so a 404 resolves to null rather than surfacing as an error.
+ */
+const politicsCache = new Map<string, Promise<PoliticalHistory | null>>();
+export function fetchPoliticalHistory(id: string): Promise<PoliticalHistory | null> {
+  let cached = politicsCache.get(id);
+  if (!cached) {
+    cached = getJson<PoliticalHistory>(`/data/politics/${id}.json`).catch(() => null);
+    politicsCache.set(id, cached);
   }
   return cached;
 }

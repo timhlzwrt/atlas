@@ -1,7 +1,8 @@
+/* No z-index: the viewport must not create a stacking context, or .card-anchor
+   is trapped below the header chrome and the card gets painted over. */
 .globe-viewport {
   position: absolute;
   inset: 0;
-  z-index: var(--z-globe);
 }
 
 .globe-viewport canvas {

@@ -6,7 +6,7 @@
  */
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
-import { EVENTS } from './curated/events';
+import { EVENTS, EVENTS_START_YEAR } from './curated/events';
 import { RELATIONSHIPS } from './curated/relationships';
 import { writePublicData } from './lib/http';
 
@@ -16,10 +16,15 @@ async function main() {
   const validIds = new Set(index.map((c) => c.id));
 
   const unknownEventCountries = new Set<string>();
+  const tooOld: string[] = [];
   for (const event of EVENTS) {
     for (const id of event.countries) {
       if (!validIds.has(id)) unknownEventCountries.add(`${event.id}: ${id}`);
     }
+    if (Number(event.date.slice(0, 4)) < EVENTS_START_YEAR) tooOld.push(`${event.id} (${event.date})`);
+  }
+  if (tooOld.length) {
+    throw new Error(`Events predate the ${EVENTS_START_YEAR} start of the atlas:\n${tooOld.join('\n')}`);
   }
   if (unknownEventCountries.size) {
     throw new Error(`Events reference unknown country ids:\n${[...unknownEventCountries].join('\n')}`);
