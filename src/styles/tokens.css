@@ -1,0 +1,62 @@
+:root {
+  /* surfaces */
+  --color-bg: #05070c;
+  --color-bg-elevated: #0a0e18;
+  --color-surface: rgba(14, 19, 32, 0.72);
+  --color-surface-solid: #0e1320;
+  --color-border: rgba(120, 150, 210, 0.16);
+  --color-border-strong: rgba(140, 170, 230, 0.32);
+
+  /* text */
+  --color-text: #eef1f8;
+  --color-text-muted: #93a0b8;
+  --color-text-faint: #5c6780;
+
+  /* accent */
+  --color-accent: #5b8cff;
+  --color-accent-bright: #8fb4ff;
+  --color-accent-dim: rgba(91, 140, 255, 0.14);
+  --color-accent-glow: rgba(91, 140, 255, 0.35);
+
+  /* semantic */
+  --color-positive: #4fd1a5;
+  --color-warning: #e0b563;
+  --color-conflict: #e0637a;
+  --color-disputed: #d9a441;
+
+  /* elevation */
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.3);
+
+  /* radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* type */
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-med: 320ms;
+  --dur-slow: 700ms;
+
+  --z-globe: 0;
+  --z-chrome: 10;
+  --z-card: 20;
+  --z-overlay: 30;
+  --z-toast: 40;
+}

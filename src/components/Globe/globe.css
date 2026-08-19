@@ -1,0 +1,26 @@
+.globe-viewport {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-globe);
+}
+
+.globe-viewport canvas {
+  cursor: grab;
+}
+
+.globe-viewport:active canvas {
+  cursor: grabbing;
+}
+
+.card-anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  z-index: var(--z-card);
+  transition: opacity var(--dur-fast) var(--ease-out);
+  pointer-events: none;
+}
+

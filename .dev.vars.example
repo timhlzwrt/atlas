@@ -1,0 +1,3 @@
+# Copy this file to .dev.vars for local `wrangler pages dev` runs.
+# .dev.vars is gitignored — never commit real secrets.
+GNEWS_API_KEY=your-gnews-api-key-here

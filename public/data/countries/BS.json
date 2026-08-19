@@ -1,0 +1,207 @@
+{
+  "id": "BS",
+  "iso3": "BHS",
+  "name": "The Bahamas",
+  "officialName": "Commonwealth of the Bahamas",
+  "region": "North America",
+  "capital": "Nassau",
+  "flagEmoji": "🇧🇸",
+  "recognitionStatus": "un-member",
+  "hasDeepData": true,
+  "languages": [
+    "English"
+  ],
+  "currency": "Bahamian dollar",
+  "governmentType": "constitutional monarchy",
+  "headOfState": "Charles III",
+  "headOfGovernment": "Philip \"Brave\" Davis",
+  "independenceDate": "1973-07-10",
+  "neighbors": [
+    "US",
+    "GB"
+  ],
+  "borders": [
+    "US",
+    "GB"
+  ],
+  "statistics": {
+    "population": {
+      "value": 403033,
+      "unit": "people",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Population, total",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BS",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "populationDensity": {
+      "value": 39.9040959040959,
+      "unit": "people/km²",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Population density",
+        "url": "https://data.worldbank.org/indicator/EN.POP.DNST?locations=BS",
+        "date": "2023"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "area": {
+      "value": 10010,
+      "unit": "km²",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Land area",
+        "url": "https://data.worldbank.org/indicator/AG.LND.TOTL.K2?locations=BS",
+        "date": "2023"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdp": {
+      "value": 15832800000,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP (current US$)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=BS",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpPerCapita": {
+      "value": 39455.4466548546,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP per capita (current US$)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=BS",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpGrowth": {
+      "value": 3.37866553336166,
+      "unit": "%",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP growth (annual %)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BS",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpPpp": {
+      "value": 16556039743.5585,
+      "unit": "intl $",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP, PPP (current international $)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=BS",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "inflation": {
+      "value": 0.409162489083286,
+      "unit": "%",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Inflation, consumer prices (annual %)",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=BS",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "unemployment": {
+      "value": 9.207,
+      "unit": "% of labor force",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Unemployment, total (% of labor force)",
+        "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=BS",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "lifeExpectancy": {
+      "value": 74.71,
+      "unit": "years",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Life expectancy at birth",
+        "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=BS",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    }
+  },
+  "sources": [
+    {
+      "org": "Wikidata",
+      "dataset": "Wikidata item Q778",
+      "url": "https://www.wikidata.org/wiki/Q778",
+      "date": "2026-08-19"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Population, total",
+      "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BS",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Population density",
+      "url": "https://data.worldbank.org/indicator/EN.POP.DNST?locations=BS",
+      "date": "2023"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Land area",
+      "url": "https://data.worldbank.org/indicator/AG.LND.TOTL.K2?locations=BS",
+      "date": "2023"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP (current US$)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=BS",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP per capita (current US$)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=BS",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP growth (annual %)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=BS",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP, PPP (current international $)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=BS",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Inflation, consumer prices (annual %)",
+      "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=BS",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Unemployment, total (% of labor force)",
+      "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=BS",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Life expectancy at birth",
+      "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=BS",
+      "date": "2024"
+    }
+  ]
+}

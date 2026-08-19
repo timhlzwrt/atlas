@@ -1,0 +1,2654 @@
+[
+  {
+    "id": "AF",
+    "name": "Afghanistan",
+    "officialName": "Islamic Emirate of Afghanistan",
+    "region": "Asia",
+    "flagEmoji": "🇦🇫",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      65.925899147139,
+      33.81880137672014
+    ]
+  },
+  {
+    "id": "AL",
+    "name": "Albania",
+    "officialName": "Albania",
+    "region": "Europe",
+    "flagEmoji": "🇦🇱",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      20.05175112333234,
+      41.13491997557124
+    ]
+  },
+  {
+    "id": "DZ",
+    "name": "Algeria",
+    "officialName": "Algeria",
+    "region": "Africa",
+    "flagEmoji": "🇩🇿",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      2.6311001079842264,
+      28.055946183378527
+    ]
+  },
+  {
+    "id": "AD",
+    "name": "Andorra",
+    "officialName": "Andorra",
+    "region": "Europe",
+    "flagEmoji": "🇦🇩",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      1.5606464885897462,
+      42.54201126676123
+    ]
+  },
+  {
+    "id": "AO",
+    "name": "Angola",
+    "officialName": "People's Republic of Angola",
+    "region": "Africa",
+    "flagEmoji": "🇦🇴",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      17.531910951725113,
+      -12.270672377949156
+    ]
+  },
+  {
+    "id": "AG",
+    "name": "Antigua and Barbuda",
+    "officialName": "Antigua and Barbuda",
+    "region": "North America",
+    "flagEmoji": "🇦🇬",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -61.794485453569564,
+      17.276171498854783
+    ]
+  },
+  {
+    "id": "AR",
+    "name": "Argentina",
+    "officialName": "Argentina",
+    "region": "South America",
+    "flagEmoji": "🇦🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -64.7625080167647,
+      -34.68399971942134
+    ]
+  },
+  {
+    "id": "AM",
+    "name": "Armenia",
+    "officialName": "Republic of Armenia",
+    "region": "Asia",
+    "flagEmoji": "🇦🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      44.938265646849416,
+      40.28780654696867
+    ]
+  },
+  {
+    "id": "AW",
+    "name": "Aruba",
+    "officialName": "Aruba",
+    "region": "North America",
+    "flagEmoji": "🇦🇼",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -69.98269367080839,
+      12.521029346157269
+    ]
+  },
+  {
+    "id": "AU",
+    "name": "Australia",
+    "officialName": "Australia",
+    "region": "Oceania",
+    "flagEmoji": "🇦🇺",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      123.58383580682278,
+      -12.430025865293393
+    ]
+  },
+  {
+    "id": "AT",
+    "name": "Austria",
+    "officialName": "Austria",
+    "region": "Europe",
+    "flagEmoji": "🇦🇹",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      14.110275265783176,
+      47.59234483529681
+    ]
+  },
+  {
+    "id": "AZ",
+    "name": "Azerbaijan",
+    "officialName": "Azerbaijan",
+    "region": "Asia",
+    "flagEmoji": "🇦🇿",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      47.54794600254647,
+      40.28660348340181
+    ]
+  },
+  {
+    "id": "BH",
+    "name": "Bahrain",
+    "officialName": "Kingdom of Bahrain",
+    "region": "Asia",
+    "flagEmoji": "🇧🇭",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      50.54245623441757,
+      26.04170548135867
+    ]
+  },
+  {
+    "id": "BD",
+    "name": "Bangladesh",
+    "officialName": "Bangladesh",
+    "region": "Asia",
+    "flagEmoji": "🇧🇩",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      90.24708149253766,
+      23.860940075339926
+    ]
+  },
+  {
+    "id": "BB",
+    "name": "Barbados",
+    "officialName": "Barbados",
+    "region": "North America",
+    "flagEmoji": "🇧🇧",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -59.56016937550867,
+      13.1810640104698
+    ]
+  },
+  {
+    "id": "BY",
+    "name": "Belarus",
+    "officialName": "Belarus",
+    "region": "Europe",
+    "flagEmoji": "🇧🇾",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      28.015524672247533,
+      53.519484346643004
+    ]
+  },
+  {
+    "id": "BE",
+    "name": "Belgium",
+    "officialName": "Belgium",
+    "region": "Europe",
+    "flagEmoji": "🇧🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      4.646360603711718,
+      50.638787148007495
+    ]
+  },
+  {
+    "id": "BZ",
+    "name": "Belize",
+    "officialName": "Belize",
+    "region": "North America",
+    "flagEmoji": "🇧🇿",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -88.71061773460941,
+      17.198953451637987
+    ]
+  },
+  {
+    "id": "BJ",
+    "name": "Benin",
+    "officialName": "Republic of Benin",
+    "region": "Africa",
+    "flagEmoji": "🇧🇯",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      2.326869517230055,
+      9.635774075300189
+    ]
+  },
+  {
+    "id": "BT",
+    "name": "Bhutan",
+    "officialName": "Kingdom of Bhutan",
+    "region": "Asia",
+    "flagEmoji": "🇧🇹",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      90.40209982016522,
+      27.41233946250233
+    ]
+  },
+  {
+    "id": "BO",
+    "name": "Bolivia",
+    "officialName": "Plurinational State of Bolivia",
+    "region": "South America",
+    "flagEmoji": "🇧🇴",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -64.69835324761397,
+      -16.682025165323818
+    ]
+  },
+  {
+    "id": "BA",
+    "name": "Bosnia and Herzegovina",
+    "officialName": "Bosnia and Herzegovina",
+    "region": "Europe",
+    "flagEmoji": "🇧🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      17.774781292505967,
+      44.17142233870694
+    ]
+  },
+  {
+    "id": "BW",
+    "name": "Botswana",
+    "officialName": "Republic of Botswana",
+    "region": "Africa",
+    "flagEmoji": "🇧🇼",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      23.80851609494559,
+      -22.165510135562283
+    ]
+  },
+  {
+    "id": "BR",
+    "name": "Brazil",
+    "officialName": "Brazil",
+    "region": "South America",
+    "flagEmoji": "🇧🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -53.215669849803845,
+      -10.638940312199168
+    ]
+  },
+  {
+    "id": "BN",
+    "name": "Brunei",
+    "officialName": "Brunei",
+    "region": "Asia",
+    "flagEmoji": "🇧🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      114.72164273142663,
+      4.519834203436234
+    ]
+  },
+  {
+    "id": "BG",
+    "name": "Bulgaria",
+    "officialName": "Republic of Bulgaria",
+    "region": "Europe",
+    "flagEmoji": "🇧🇬",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      25.208917962760147,
+      42.77132868442419
+    ]
+  },
+  {
+    "id": "BF",
+    "name": "Burkina Faso",
+    "officialName": "Burkina Faso",
+    "region": "Africa",
+    "flagEmoji": "🇧🇫",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -1.7610686700924956,
+      12.27070874217727
+    ]
+  },
+  {
+    "id": "BI",
+    "name": "Burundi",
+    "officialName": "Republic of Burundi",
+    "region": "Africa",
+    "flagEmoji": "🇧🇮",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      29.875385517901965,
+      -3.3593064852901384
+    ]
+  },
+  {
+    "id": "KH",
+    "name": "Cambodia",
+    "officialName": "Kingdom of Cambodia",
+    "region": "Asia",
+    "flagEmoji": "🇰🇭",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      104.90503974863627,
+      12.719469421212631
+    ]
+  },
+  {
+    "id": "CM",
+    "name": "Cameroon",
+    "officialName": "Republic of Cameroon",
+    "region": "Africa",
+    "flagEmoji": "🇨🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      12.733770200157094,
+      5.681432200843567
+    ]
+  },
+  {
+    "id": "CA",
+    "name": "Canada",
+    "officialName": "Canada",
+    "region": "North America",
+    "flagEmoji": "🇨🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -96.54855541024702,
+      60.41749144991488
+    ]
+  },
+  {
+    "id": "CV",
+    "name": "Cape Verde",
+    "officialName": "Cape Verde",
+    "region": "Africa",
+    "flagEmoji": "🇨🇻",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -23.95758148847591,
+      15.955083052724914
+    ]
+  },
+  {
+    "id": "CF",
+    "name": "Central African Republic",
+    "officialName": "Central African Republic",
+    "region": "Africa",
+    "flagEmoji": "🇨🇫",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      20.46168454343099,
+      6.572283399907417
+    ]
+  },
+  {
+    "id": "TD",
+    "name": "Chad",
+    "officialName": "Republic of Chad",
+    "region": "Africa",
+    "flagEmoji": "🇹🇩",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      18.63508424343435,
+      15.275383861664743
+    ]
+  },
+  {
+    "id": "CL",
+    "name": "Chile",
+    "officialName": "Republic of Chile",
+    "region": "South America",
+    "flagEmoji": "🇨🇱",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -71.0557759436706,
+      -36.07485061225178
+    ]
+  },
+  {
+    "id": "CO",
+    "name": "Colombia",
+    "officialName": "Republic of Colombia",
+    "region": "South America",
+    "flagEmoji": "🇨🇴",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -73.07699383249614,
+      3.903405402585914
+    ]
+  },
+  {
+    "id": "KM",
+    "name": "Comoros",
+    "officialName": "Union of the Comoros",
+    "region": "Africa",
+    "flagEmoji": "🇰🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      43.68438826092466,
+      -11.878995553083817
+    ]
+  },
+  {
+    "id": "CK",
+    "name": "Cook Islands",
+    "officialName": "Cook Islands",
+    "region": "Insular Oceania",
+    "flagEmoji": "🇨🇰",
+    "hasDeepData": false,
+    "recognitionStatus": "un-observer",
+    "centroid": [
+      -159.7871044935974,
+      -21.219518621237786
+    ]
+  },
+  {
+    "id": "CR",
+    "name": "Costa Rica",
+    "officialName": "Republic of Costa Rica",
+    "region": "North America",
+    "flagEmoji": "🇨🇷",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -84.19010556772535,
+      9.976386381275866
+    ]
+  },
+  {
+    "id": "HR",
+    "name": "Croatia",
+    "officialName": "Croatia",
+    "region": "Europe",
+    "flagEmoji": "🇭🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      16.40099663759752,
+      45.07583262357101
+    ]
+  },
+  {
+    "id": "CU",
+    "name": "Cuba",
+    "officialName": "Republic of Cuba",
+    "region": "North America",
+    "flagEmoji": "🇨🇺",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -78.98702511706668,
+      21.637972670204018
+    ]
+  },
+  {
+    "id": "CW",
+    "name": "Curaçao",
+    "officialName": "Curaçao",
+    "region": "North America",
+    "flagEmoji": "🇨🇼",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -68.97212376074772,
+      12.195730707521546
+    ]
+  },
+  {
+    "id": "CY",
+    "name": "Cyprus",
+    "officialName": "Republic of Cyprus",
+    "region": "Europe",
+    "flagEmoji": "🇨🇾",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      33.005622208469475,
+      34.91721086596974
+    ]
+  },
+  {
+    "id": "CZ",
+    "name": "Czech Republic",
+    "officialName": "Czech Republic",
+    "region": "Europe",
+    "flagEmoji": "🇨🇿",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      15.319496749269478,
+      49.73798136333449
+    ]
+  },
+  {
+    "id": "CD",
+    "name": "Democratic Republic of the Congo",
+    "officialName": "Democratic Republic of the Congo",
+    "region": "Africa",
+    "flagEmoji": "🇨🇩",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      23.637769019471545,
+      -2.8653545998593897
+    ]
+  },
+  {
+    "id": "DK",
+    "name": "Denmark",
+    "officialName": "Denmark",
+    "region": "Europe",
+    "flagEmoji": "🇩🇰",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      10.042398641339194,
+      55.97511528034877
+    ]
+  },
+  {
+    "id": "DJ",
+    "name": "Djibouti",
+    "officialName": "Djibouti",
+    "region": "Africa",
+    "flagEmoji": "🇩🇯",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      42.559969772838905,
+      11.748755445699818
+    ]
+  },
+  {
+    "id": "DM",
+    "name": "Dominica",
+    "officialName": "Dominica",
+    "region": "North America",
+    "flagEmoji": "🇩🇲",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -61.35763919755606,
+      15.439369486951625
+    ]
+  },
+  {
+    "id": "DO",
+    "name": "Dominican Republic",
+    "officialName": "Dominican Republic",
+    "region": "North America",
+    "flagEmoji": "🇩🇴",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -70.50515718887756,
+      18.895108535905837
+    ]
+  },
+  {
+    "id": "EC",
+    "name": "Ecuador",
+    "officialName": "Ecuador",
+    "region": "South America",
+    "flagEmoji": "🇪🇨",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -78.74926074820509,
+      -1.4242873240691036
+    ]
+  },
+  {
+    "id": "EG",
+    "name": "Egypt",
+    "officialName": "Egypt",
+    "region": "Africa",
+    "flagEmoji": "🇪🇬",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      29.877917299852545,
+      26.459585778678562
+    ]
+  },
+  {
+    "id": "SV",
+    "name": "El Salvador",
+    "officialName": "El Salvador",
+    "region": "North America",
+    "flagEmoji": "🇸🇻",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -88.87131499085453,
+      13.739606739904417
+    ]
+  },
+  {
+    "id": "GQ",
+    "name": "Equatorial Guinea",
+    "officialName": "Equatorial Guinea",
+    "region": "Africa",
+    "flagEmoji": "🇬🇶",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      10.341513972331898,
+      1.7057132568498807
+    ]
+  },
+  {
+    "id": "ER",
+    "name": "Eritrea",
+    "officialName": "Eritrea",
+    "region": "Africa",
+    "flagEmoji": "🇪🇷",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      38.85708592970389,
+      15.361043176289105
+    ]
+  },
+  {
+    "id": "EE",
+    "name": "Estonia",
+    "officialName": "Estonia",
+    "region": "Europe",
+    "flagEmoji": "🇪🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      25.545276167433688,
+      58.672670514530495
+    ]
+  },
+  {
+    "id": "SZ",
+    "name": "Eswatini",
+    "officialName": "Kingdom of Eswatini",
+    "region": "Africa",
+    "flagEmoji": "🇸🇿",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      31.481629033178812,
+      -26.55778069031769
+    ]
+  },
+  {
+    "id": "ET",
+    "name": "Ethiopia",
+    "officialName": "Ethiopia",
+    "region": "Africa",
+    "flagEmoji": "🇪🇹",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      39.60973696449976,
+      8.614385874255959
+    ]
+  },
+  {
+    "id": "FM",
+    "name": "Federated States of Micronesia",
+    "officialName": "Federated States of Micronesia",
+    "region": "Oceania",
+    "flagEmoji": "🇫🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      153.29662412944666,
+      7.5360532893943635
+    ]
+  },
+  {
+    "id": "FJ",
+    "name": "Fiji",
+    "officialName": "Republic of Fiji",
+    "region": "Insular Oceania",
+    "flagEmoji": "🇫🇯",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      178.51210012984453,
+      -17.427791469253705
+    ]
+  },
+  {
+    "id": "FI",
+    "name": "Finland",
+    "officialName": "Finland",
+    "region": "Europe",
+    "flagEmoji": "🇫🇮",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      26.194979089331937,
+      64.2551505800052
+    ]
+  },
+  {
+    "id": "FR",
+    "name": "France",
+    "officialName": "France",
+    "region": "Europe",
+    "flagEmoji": "🇫🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -6.676661461398807,
+      42.954839304715776
+    ]
+  },
+  {
+    "id": "GA",
+    "name": "Gabon",
+    "officialName": "Gabon",
+    "region": "Africa",
+    "flagEmoji": "🇬🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      11.788494358455571,
+      -0.5864998191944737
+    ]
+  },
+  {
+    "id": "GE",
+    "name": "Georgia",
+    "officialName": "Georgia",
+    "region": "Europe",
+    "flagEmoji": "🇬🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      43.524173704732675,
+      42.173099001180866
+    ]
+  },
+  {
+    "id": "DE",
+    "name": "Germany",
+    "officialName": "Germany",
+    "region": "Europe",
+    "flagEmoji": "🇩🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      10.36436515050091,
+      51.05061383670596
+    ]
+  },
+  {
+    "id": "GH",
+    "name": "Ghana",
+    "officialName": "Ghana",
+    "region": "Africa",
+    "flagEmoji": "🇬🇭",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -1.2170053603227091,
+      7.947613306313944
+    ]
+  },
+  {
+    "id": "GR",
+    "name": "Greece",
+    "officialName": "Hellenic Republic",
+    "region": "Europe",
+    "flagEmoji": "🇬🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      22.964560660451347,
+      39.04788049749538
+    ]
+  },
+  {
+    "id": "GL",
+    "name": "Greenland",
+    "officialName": "Greenland",
+    "region": "North America",
+    "flagEmoji": "🇬🇱",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -41.81347756594833,
+      73.08119673807316
+    ]
+  },
+  {
+    "id": "GD",
+    "name": "Grenada",
+    "officialName": "Grenada",
+    "region": "North America",
+    "flagEmoji": "🇬🇩",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -61.681838475628346,
+      12.117380370375379
+    ]
+  },
+  {
+    "id": "GT",
+    "name": "Guatemala",
+    "officialName": "Guatemala",
+    "region": "North America",
+    "flagEmoji": "🇬🇹",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -90.36740975761775,
+      15.690142714316243
+    ]
+  },
+  {
+    "id": "GN",
+    "name": "Guinea",
+    "officialName": "Guinea",
+    "region": "Africa",
+    "flagEmoji": "🇬🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -10.934545480532485,
+      10.437404227967672
+    ]
+  },
+  {
+    "id": "GW",
+    "name": "Guinea-Bissau",
+    "officialName": "Guinea-Bissau",
+    "region": "Africa",
+    "flagEmoji": "🇬🇼",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -14.949907246188129,
+      12.048290939081319
+    ]
+  },
+  {
+    "id": "GY",
+    "name": "Guyana",
+    "officialName": "Guyana",
+    "region": "South America",
+    "flagEmoji": "🇬🇾",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -58.97971528060782,
+      4.789561724828946
+    ]
+  },
+  {
+    "id": "HT",
+    "name": "Haiti",
+    "officialName": "Haiti",
+    "region": "North America",
+    "flagEmoji": "🇭🇹",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -72.68700093939466,
+      18.93459435819168
+    ]
+  },
+  {
+    "id": "HN",
+    "name": "Honduras",
+    "officialName": "Honduras",
+    "region": "North America",
+    "flagEmoji": "🇭🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -86.61782355125136,
+      14.82898120404834
+    ]
+  },
+  {
+    "id": "HU",
+    "name": "Hungary",
+    "officialName": "Hungary",
+    "region": "Europe",
+    "flagEmoji": "🇭🇺",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      19.379270765483223,
+      47.16592270582836
+    ]
+  },
+  {
+    "id": "IS",
+    "name": "Iceland",
+    "officialName": "Iceland",
+    "region": "Europe",
+    "flagEmoji": "🇮🇸",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -18.580097094361786,
+      64.99794292080661
+    ]
+  },
+  {
+    "id": "IN",
+    "name": "India",
+    "officialName": "Republic of India",
+    "region": "Asia",
+    "flagEmoji": "🇮🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      79.56373385813113,
+      22.77663124583421
+    ]
+  },
+  {
+    "id": "ID",
+    "name": "Indonesia",
+    "officialName": "Indonesia",
+    "region": "Asia",
+    "flagEmoji": "🇮🇩",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      117.1807295261756,
+      -2.264347774253769
+    ]
+  },
+  {
+    "id": "IR",
+    "name": "Iran",
+    "officialName": "Iran",
+    "region": "Asia",
+    "flagEmoji": "🇮🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      54.44081007201602,
+      32.52730565874225
+    ]
+  },
+  {
+    "id": "IQ",
+    "name": "Iraq",
+    "officialName": "Republic of Iraq",
+    "region": "Asia",
+    "flagEmoji": "🇮🇶",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      43.77374821115739,
+      33.00958211428088
+    ]
+  },
+  {
+    "id": "IE",
+    "name": "Ireland",
+    "officialName": "Ireland",
+    "region": "Europe",
+    "flagEmoji": "🇮🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -8.14590398252281,
+      53.16233423936298
+    ]
+  },
+  {
+    "id": "IL",
+    "name": "Israel",
+    "officialName": "Israel",
+    "region": "Asia",
+    "flagEmoji": "🇮🇱",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      34.99974081606207,
+      31.451622981312703
+    ]
+  },
+  {
+    "id": "IT",
+    "name": "Italy",
+    "officialName": "Italy",
+    "region": "Europe",
+    "flagEmoji": "🇮🇹",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      12.200688765327396,
+      42.71596544420155
+    ]
+  },
+  {
+    "id": "CI",
+    "name": "Ivory Coast",
+    "officialName": "Republic of Côte d’Ivoire",
+    "region": "Africa",
+    "flagEmoji": "🇨🇮",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -5.5691114613102455,
+      7.625692170337771
+    ]
+  },
+  {
+    "id": "JM",
+    "name": "Jamaica",
+    "officialName": "Jamaica",
+    "region": "North America",
+    "flagEmoji": "🇯🇲",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -77.31454964524416,
+      18.157109752682683
+    ]
+  },
+  {
+    "id": "JP",
+    "name": "Japan",
+    "officialName": "Japan",
+    "region": "Asia",
+    "flagEmoji": "🇯🇵",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      137.6604063963343,
+      37.46108421187739
+    ]
+  },
+  {
+    "id": "JO",
+    "name": "Jordan",
+    "officialName": "Jordan",
+    "region": "Asia",
+    "flagEmoji": "🇯🇴",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      36.757475371295584,
+      31.2385238762092
+    ]
+  },
+  {
+    "id": "KZ",
+    "name": "Kazakhstan",
+    "officialName": "Kazakhstan",
+    "region": "Europe",
+    "flagEmoji": "🇰🇿",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      67.24559732985485,
+      48.36174286528355
+    ]
+  },
+  {
+    "id": "KE",
+    "name": "Kenya",
+    "officialName": "Republic of Kenya",
+    "region": "Africa",
+    "flagEmoji": "🇰🇪",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      37.79641119389452,
+      0.5995118152152128
+    ]
+  },
+  {
+    "id": "NL",
+    "name": "Kingdom of the Netherlands",
+    "officialName": "Kingdom of the Netherlands",
+    "region": "Europe",
+    "flagEmoji": "🇳🇱",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      4.982692073323069,
+      52.22643784863761
+    ]
+  },
+  {
+    "id": "KI",
+    "name": "Kiribati",
+    "officialName": "Republic of Kiribati",
+    "region": "Insular Oceania",
+    "flagEmoji": "🇰🇮",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -167.9216945143975,
+      0.8929852780702686
+    ]
+  },
+  {
+    "id": "XK",
+    "name": "Kosovo",
+    "officialName": "Kosovo",
+    "region": "Europe",
+    "flagEmoji": "🇽🇰",
+    "hasDeepData": false,
+    "recognitionStatus": "partially-recognized",
+    "centroid": [
+      20.87296034516077,
+      42.57061860961562
+    ]
+  },
+  {
+    "id": "KW",
+    "name": "Kuwait",
+    "officialName": "Kuwait",
+    "region": "Asia",
+    "flagEmoji": "🇰🇼",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      47.58821132790608,
+      29.333254304380652
+    ]
+  },
+  {
+    "id": "KG",
+    "name": "Kyrgyzstan",
+    "officialName": "Kyrgyzstan",
+    "region": "Asia",
+    "flagEmoji": "🇰🇬",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      74.5091717668586,
+      41.474414858902804
+    ]
+  },
+  {
+    "id": "LA",
+    "name": "Laos",
+    "officialName": "Laos",
+    "region": "Asia",
+    "flagEmoji": "🇱🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      103.77524083846093,
+      18.487224043477294
+    ]
+  },
+  {
+    "id": "LV",
+    "name": "Latvia",
+    "officialName": "Latvia",
+    "region": "Europe",
+    "flagEmoji": "🇱🇻",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      24.920285108845977,
+      56.8595715078024
+    ]
+  },
+  {
+    "id": "LB",
+    "name": "Lebanon",
+    "officialName": "Lebanon",
+    "region": "Asia",
+    "flagEmoji": "🇱🇧",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      35.87799817639761,
+      33.921224329824256
+    ]
+  },
+  {
+    "id": "LS",
+    "name": "Lesotho",
+    "officialName": "Lesotho",
+    "region": "Africa",
+    "flagEmoji": "🇱🇸",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      28.229038335880112,
+      -29.579079624727243
+    ]
+  },
+  {
+    "id": "LR",
+    "name": "Liberia",
+    "officialName": "Liberia",
+    "region": "Africa",
+    "flagEmoji": "🇱🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -9.319786749206543,
+      6.452203522827829
+    ]
+  },
+  {
+    "id": "LY",
+    "name": "Libya",
+    "officialName": "State of Libya",
+    "region": "Africa",
+    "flagEmoji": "🇱🇾",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      18.066225952060133,
+      27.01681490353116
+    ]
+  },
+  {
+    "id": "LI",
+    "name": "Liechtenstein",
+    "officialName": "Liechtenstein",
+    "region": "Europe",
+    "flagEmoji": "🇱🇮",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      9.535748139062376,
+      47.13666553205226
+    ]
+  },
+  {
+    "id": "LT",
+    "name": "Lithuania",
+    "officialName": "Lithuania",
+    "region": "Europe",
+    "flagEmoji": "🇱🇹",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      23.897152867335524,
+      55.32371373787546
+    ]
+  },
+  {
+    "id": "LU",
+    "name": "Luxembourg",
+    "officialName": "Grand Duchy of Luxembourg",
+    "region": "Europe",
+    "flagEmoji": "🇱🇺",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      6.072199160181989,
+      49.76691849203629
+    ]
+  },
+  {
+    "id": "MG",
+    "name": "Madagascar",
+    "officialName": "Madagascar",
+    "region": "Africa",
+    "flagEmoji": "🇲🇬",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      46.74291871953579,
+      -19.31657837319766
+    ]
+  },
+  {
+    "id": "MW",
+    "name": "Malawi",
+    "officialName": "Malawi",
+    "region": "Africa",
+    "flagEmoji": "🇲🇼",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      34.2825098757073,
+      -13.204222483178608
+    ]
+  },
+  {
+    "id": "MY",
+    "name": "Malaysia",
+    "officialName": "Malaysia",
+    "region": "Asia",
+    "flagEmoji": "🇲🇾",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      109.69976522420686,
+      3.8111227950508746
+    ]
+  },
+  {
+    "id": "MV",
+    "name": "Maldives",
+    "officialName": "Maldives",
+    "region": "Asia",
+    "flagEmoji": "🇲🇻",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      73.45729027936072,
+      3.731572963771214
+    ]
+  },
+  {
+    "id": "ML",
+    "name": "Mali",
+    "officialName": "Mali",
+    "region": "Africa",
+    "flagEmoji": "🇲🇱",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -3.590460403973842,
+      17.315075740415754
+    ]
+  },
+  {
+    "id": "MT",
+    "name": "Malta",
+    "officialName": "Malta",
+    "region": "Europe",
+    "flagEmoji": "🇲🇹",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      14.40504983302517,
+      35.921510961667956
+    ]
+  },
+  {
+    "id": "MH",
+    "name": "Marshall Islands",
+    "officialName": "Marshall Islands",
+    "region": "Oceania",
+    "flagEmoji": "🇲🇭",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      170.33129110222018,
+      7.015025331860305
+    ]
+  },
+  {
+    "id": "MR",
+    "name": "Mauritania",
+    "officialName": "Mauritania",
+    "region": "Africa",
+    "flagEmoji": "🇲🇷",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -10.36997616829003,
+      20.220333349025303
+    ]
+  },
+  {
+    "id": "MU",
+    "name": "Mauritius",
+    "officialName": "Mauritius",
+    "region": "Africa",
+    "flagEmoji": "🇲🇺",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      57.57141269691574,
+      -20.277944118825168
+    ]
+  },
+  {
+    "id": "MX",
+    "name": "Mexico",
+    "officialName": "United Mexican States",
+    "region": "North America",
+    "flagEmoji": "🇲🇽",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -102.17117444832081,
+      23.92429453658416
+    ]
+  },
+  {
+    "id": "MD",
+    "name": "Moldova",
+    "officialName": "Moldova",
+    "region": "Europe",
+    "flagEmoji": "🇲🇩",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      28.46610477263662,
+      47.187045977095245
+    ]
+  },
+  {
+    "id": "MC",
+    "name": "Monaco",
+    "officialName": "Monaco",
+    "region": "Europe",
+    "flagEmoji": "🇲🇨",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      7.4072580962592225,
+      43.75256144632939
+    ]
+  },
+  {
+    "id": "MN",
+    "name": "Mongolia",
+    "officialName": "Mongolia",
+    "region": "Asia",
+    "flagEmoji": "🇲🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      103.12407720658537,
+      46.95618142338117
+    ]
+  },
+  {
+    "id": "ME",
+    "name": "Montenegro",
+    "officialName": "Montenegro",
+    "region": "Europe",
+    "flagEmoji": "🇲🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      19.238673537007774,
+      42.78791252342967
+    ]
+  },
+  {
+    "id": "MA",
+    "name": "Morocco",
+    "officialName": "Morocco",
+    "region": "Africa",
+    "flagEmoji": "🇲🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -8.728085477528673,
+      29.766562728227253
+    ]
+  },
+  {
+    "id": "MZ",
+    "name": "Mozambique",
+    "officialName": "Mozambique",
+    "region": "Africa",
+    "flagEmoji": "🇲🇿",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      35.602776650315825,
+      -17.195614973815466
+    ]
+  },
+  {
+    "id": "MM",
+    "name": "Myanmar",
+    "officialName": "Union of Burma",
+    "region": "Asia",
+    "flagEmoji": "🇲🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      96.4948357870705,
+      21.112967832007413
+    ]
+  },
+  {
+    "id": "NA",
+    "name": "Namibia",
+    "officialName": "Namibia",
+    "region": "Africa",
+    "flagEmoji": "🇳🇦",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      17.195242696587776,
+      -22.069710662751977
+    ]
+  },
+  {
+    "id": "NR",
+    "name": "Nauru",
+    "officialName": "Republic of Naoero",
+    "region": "Oceania",
+    "flagEmoji": "🇳🇷",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      166.93255337405898,
+      -0.5189420733017751
+    ]
+  },
+  {
+    "id": "NP",
+    "name": "Nepal",
+    "officialName": "Nepal",
+    "region": "Asia",
+    "flagEmoji": "🇳🇵",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      83.9473031015346,
+      28.257867479687118
+    ]
+  },
+  {
+    "id": "NZ",
+    "name": "New Zealand",
+    "officialName": "New Zealand",
+    "region": "Oceania",
+    "flagEmoji": "🇳🇿",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      172.92170874490725,
+      -41.70207245051613
+    ]
+  },
+  {
+    "id": "NI",
+    "name": "Nicaragua",
+    "officialName": "Nicaragua",
+    "region": "North America",
+    "flagEmoji": "🇳🇮",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -85.03192823779672,
+      12.845029942477376
+    ]
+  },
+  {
+    "id": "NE",
+    "name": "Niger",
+    "officialName": "Niger",
+    "region": "Africa",
+    "flagEmoji": "🇳🇪",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      9.331737677010631,
+      17.41189417739613
+    ]
+  },
+  {
+    "id": "NG",
+    "name": "Nigeria",
+    "officialName": "Federal Republic of Nigeria",
+    "region": "Africa",
+    "flagEmoji": "🇳🇬",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      8.079672401025467,
+      9.59095350818211
+    ]
+  },
+  {
+    "id": "NU",
+    "name": "Niue",
+    "officialName": "Niue",
+    "region": "Insular Oceania",
+    "flagEmoji": "🇳🇺",
+    "hasDeepData": false,
+    "recognitionStatus": "un-observer",
+    "centroid": [
+      -169.870438154574,
+      -19.04888259531279
+    ]
+  },
+  {
+    "id": "KP",
+    "name": "North Korea",
+    "officialName": "North Korea",
+    "region": "Asia",
+    "flagEmoji": "🇰🇵",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      127.15895164393821,
+      40.14012708479101
+    ]
+  },
+  {
+    "id": "MK",
+    "name": "North Macedonia",
+    "officialName": "North Macedonia",
+    "region": "Europe",
+    "flagEmoji": "🇲🇰",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      21.680697722542575,
+      41.59534873983856
+    ]
+  },
+  {
+    "id": "NO",
+    "name": "Norway",
+    "officialName": "Norway",
+    "region": "Europe",
+    "flagEmoji": "🇳🇴",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      12.74621282502788,
+      66.36061925279738
+    ]
+  },
+  {
+    "id": "OM",
+    "name": "Oman",
+    "officialName": "Oman",
+    "region": "Asia",
+    "flagEmoji": "🇴🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      56.06218658595836,
+      20.585991529152682
+    ]
+  },
+  {
+    "id": "PK",
+    "name": "Pakistan",
+    "officialName": "Pakistan",
+    "region": "Asia",
+    "flagEmoji": "🇵🇰",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      69.16842740869198,
+      29.883968979396336
+    ]
+  },
+  {
+    "id": "PW",
+    "name": "Palau",
+    "officialName": "Palau",
+    "region": "Insular Oceania",
+    "flagEmoji": "🇵🇼",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      134.40556509748708,
+      7.286030047757641
+    ]
+  },
+  {
+    "id": "PS",
+    "name": "Palestine",
+    "officialName": "Palestine",
+    "region": "Asia",
+    "flagEmoji": "🇵🇸",
+    "hasDeepData": true,
+    "recognitionStatus": "un-observer",
+    "centroid": [
+      35.19516603295362,
+      31.915030258150686
+    ]
+  },
+  {
+    "id": "PA",
+    "name": "Panama",
+    "officialName": "Panama",
+    "region": "North America",
+    "flagEmoji": "🇵🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -80.11923811061114,
+      8.520347296808628
+    ]
+  },
+  {
+    "id": "PG",
+    "name": "Papua New Guinea",
+    "officialName": "Papua New Guinea",
+    "region": "Oceania",
+    "flagEmoji": "🇵🇬",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      145.20097251436763,
+      -6.468664131710257
+    ]
+  },
+  {
+    "id": "PY",
+    "name": "Paraguay",
+    "officialName": "Paraguay",
+    "region": "South America",
+    "flagEmoji": "🇵🇾",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -58.443252278984325,
+      -23.208861835097867
+    ]
+  },
+  {
+    "id": "CN",
+    "name": "People's Republic of China",
+    "officialName": "People's Republic of China",
+    "region": "Asia",
+    "flagEmoji": "🇨🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      103.37810150759312,
+      36.691388496056305
+    ]
+  },
+  {
+    "id": "PE",
+    "name": "Peru",
+    "officialName": "Peru",
+    "region": "South America",
+    "flagEmoji": "🇵🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -74.42082516967352,
+      -9.107142070838878
+    ]
+  },
+  {
+    "id": "PH",
+    "name": "Philippines",
+    "officialName": "Republic of the Philippines",
+    "region": "Asia",
+    "flagEmoji": "🇵🇭",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      122.9193460278243,
+      11.728606411950274
+    ]
+  },
+  {
+    "id": "PL",
+    "name": "Poland",
+    "officialName": "Poland",
+    "region": "Europe",
+    "flagEmoji": "🇵🇱",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      19.41977988145293,
+      52.1119062840005
+    ]
+  },
+  {
+    "id": "PT",
+    "name": "Portugal",
+    "officialName": "Portugal",
+    "region": "Europe",
+    "flagEmoji": "🇵🇹",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -8.529151124237313,
+      39.60640147821539
+    ]
+  },
+  {
+    "id": "QA",
+    "name": "Qatar",
+    "officialName": "Qatar",
+    "region": "Asia",
+    "flagEmoji": "🇶🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      51.18436750888732,
+      25.30480194107316
+    ]
+  },
+  {
+    "id": "CG",
+    "name": "Republic of the Congo",
+    "officialName": "Republic of the Congo",
+    "region": "Africa",
+    "flagEmoji": "🇨🇬",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      15.221197561814694,
+      -0.8371171481345566
+    ]
+  },
+  {
+    "id": "RO",
+    "name": "Romania",
+    "officialName": "Romania",
+    "region": "Europe",
+    "flagEmoji": "🇷🇴",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      24.98301437469897,
+      45.848578552054576
+    ]
+  },
+  {
+    "id": "RU",
+    "name": "Russia",
+    "officialName": "Russia",
+    "region": "Europe",
+    "flagEmoji": "🇷🇺",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      95.64157363105043,
+      66.03178894878359
+    ]
+  },
+  {
+    "id": "RW",
+    "name": "Rwanda",
+    "officialName": "Republic of Rwanda",
+    "region": "Africa",
+    "flagEmoji": "🇷🇼",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      29.919914512761647,
+      -1.9902577219838138
+    ]
+  },
+  {
+    "id": "KN",
+    "name": "Saint Kitts and Nevis",
+    "officialName": "Saint Kitts and Nevis",
+    "region": "North America",
+    "flagEmoji": "🇰🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -62.68729371936866,
+      17.264654656792107
+    ]
+  },
+  {
+    "id": "LC",
+    "name": "Saint Lucia",
+    "officialName": "Saint Lucia",
+    "region": "North America",
+    "flagEmoji": "🇱🇨",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -60.96964894395848,
+      13.894564965978644
+    ]
+  },
+  {
+    "id": "VC",
+    "name": "Saint Vincent and the Grenadines",
+    "officialName": "Saint Vincent and the Grenadines",
+    "region": "North America",
+    "flagEmoji": "🇻🇨",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -61.20083930081762,
+      13.225078524861612
+    ]
+  },
+  {
+    "id": "WS",
+    "name": "Samoa",
+    "officialName": "Samoa",
+    "region": "Oceania",
+    "flagEmoji": "🇼🇸",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -172.16487634578806,
+      -13.753583708323308
+    ]
+  },
+  {
+    "id": "SM",
+    "name": "San Marino",
+    "officialName": "San Marino",
+    "region": "Europe",
+    "flagEmoji": "🇸🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      12.459438521506778,
+      43.941527392799635
+    ]
+  },
+  {
+    "id": "ST",
+    "name": "São Tomé and Príncipe",
+    "officialName": "São Tomé and Príncipe",
+    "region": "Africa",
+    "flagEmoji": "🇸🇹",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      6.723473619330318,
+      0.44343437265233077
+    ]
+  },
+  {
+    "id": "SA",
+    "name": "Saudi Arabia",
+    "officialName": "Saudi Arabia",
+    "region": "Asia",
+    "flagEmoji": "🇸🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      44.66316551813148,
+      24.086527584490447
+    ]
+  },
+  {
+    "id": "SN",
+    "name": "Senegal",
+    "officialName": "Senegal",
+    "region": "Africa",
+    "flagEmoji": "🇸🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -14.469131427351726,
+      14.364779705095003
+    ]
+  },
+  {
+    "id": "RS",
+    "name": "Serbia",
+    "officialName": "Serbia",
+    "region": "Europe",
+    "flagEmoji": "🇷🇸",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      20.806381212673223,
+      44.21142213902973
+    ]
+  },
+  {
+    "id": "SC",
+    "name": "Seychelles",
+    "officialName": "Seychelles",
+    "region": "Africa",
+    "flagEmoji": "🇸🇨",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      55.47596295686005,
+      -4.660106638743975
+    ]
+  },
+  {
+    "id": "SL",
+    "name": "Sierra Leone",
+    "officialName": "Sierra Leone",
+    "region": "Africa",
+    "flagEmoji": "🇸🇱",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -11.792675151693825,
+      8.562478248467022
+    ]
+  },
+  {
+    "id": "SG",
+    "name": "Singapore",
+    "officialName": "Republic of Singapore",
+    "region": "Asia",
+    "flagEmoji": "🇸🇬",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      103.81695626288491,
+      1.359045135937911
+    ]
+  },
+  {
+    "id": "SX",
+    "name": "Sint Maarten",
+    "officialName": "Sint Maarten",
+    "region": "North America",
+    "flagEmoji": "🇸🇽",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -63.05717612418121,
+      18.050855735146687
+    ]
+  },
+  {
+    "id": "SK",
+    "name": "Slovakia",
+    "officialName": "Slovakia",
+    "region": "Europe",
+    "flagEmoji": "🇸🇰",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      19.469154427759364,
+      48.71128151262859
+    ]
+  },
+  {
+    "id": "SI",
+    "name": "Slovenia",
+    "officialName": "Slovenia",
+    "region": "Europe",
+    "flagEmoji": "🇸🇮",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      14.80088229841095,
+      46.11614598055632
+    ]
+  },
+  {
+    "id": "SB",
+    "name": "Solomon Islands",
+    "officialName": "Solomon Islands",
+    "region": "Insular Oceania",
+    "flagEmoji": "🇸🇧",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      159.62023053682825,
+      -8.921996159869593
+    ]
+  },
+  {
+    "id": "SO",
+    "name": "Somalia",
+    "officialName": "Federal Republic of Somalia",
+    "region": "Africa",
+    "flagEmoji": "🇸🇴",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      45.67958939246915,
+      4.739662167474933
+    ]
+  },
+  {
+    "id": "XS",
+    "name": "Somaliland",
+    "officialName": "Republic of Somaliland",
+    "region": "Africa",
+    "flagEmoji": "🇽🇸",
+    "hasDeepData": false,
+    "recognitionStatus": "de-facto",
+    "centroid": [
+      46.25245074410386,
+      9.735489027095513
+    ]
+  },
+  {
+    "id": "ZA",
+    "name": "South Africa",
+    "officialName": "Republic of South Africa",
+    "region": "Africa",
+    "flagEmoji": "🇿🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      25.193727820863604,
+      -28.97435049832606
+    ]
+  },
+  {
+    "id": "KR",
+    "name": "South Korea",
+    "officialName": "Republic of Korea",
+    "region": "Asia",
+    "flagEmoji": "🇰🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      127.83501942428023,
+      36.373480595418215
+    ]
+  },
+  {
+    "id": "SS",
+    "name": "South Sudan",
+    "officialName": "South Sudan",
+    "region": "Africa",
+    "flagEmoji": "🇸🇸",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      30.25125004509164,
+      7.308933685726991
+    ]
+  },
+  {
+    "id": "ES",
+    "name": "Spain",
+    "officialName": "Spain",
+    "region": "Europe",
+    "flagEmoji": "🇪🇸",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -3.7037676086903666,
+      40.20739497355261
+    ]
+  },
+  {
+    "id": "LK",
+    "name": "Sri Lanka",
+    "officialName": "Sri Lanka",
+    "region": "Asia",
+    "flagEmoji": "🇱🇰",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      80.70159555330923,
+      7.611404682249292
+    ]
+  },
+  {
+    "id": "SD",
+    "name": "Sudan",
+    "officialName": "Sudan",
+    "region": "Africa",
+    "flagEmoji": "🇸🇩",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      29.90728206813427,
+      15.96806872391532
+    ]
+  },
+  {
+    "id": "SR",
+    "name": "Suriname",
+    "officialName": "Suriname",
+    "region": "South America",
+    "flagEmoji": "🇸🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -55.912550729144485,
+      4.130011063952871
+    ]
+  },
+  {
+    "id": "SE",
+    "name": "Sweden",
+    "officialName": "Sweden",
+    "region": "Europe",
+    "flagEmoji": "🇸🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      16.266969067756254,
+      62.38337287893733
+    ]
+  },
+  {
+    "id": "CH",
+    "name": "Switzerland",
+    "officialName": "Swiss Confederation",
+    "region": "Europe",
+    "flagEmoji": "🇨🇭",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      8.206043751498328,
+      46.798893738631655
+    ]
+  },
+  {
+    "id": "SY",
+    "name": "Syria",
+    "officialName": "Syria",
+    "region": "Asia",
+    "flagEmoji": "🇸🇾",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      38.48775429757016,
+      35.01896622055306
+    ]
+  },
+  {
+    "id": "TW",
+    "name": "Taiwan",
+    "officialName": "Taiwan",
+    "region": "Asia",
+    "flagEmoji": "🇹🇼",
+    "hasDeepData": false,
+    "recognitionStatus": "partially-recognized",
+    "centroid": [
+      120.95124998898282,
+      23.749582517357737
+    ]
+  },
+  {
+    "id": "TJ",
+    "name": "Tajikistan",
+    "officialName": "Tajikistan",
+    "region": "Asia",
+    "flagEmoji": "🇹🇯",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      71.0270414891491,
+      38.5365302546635
+    ]
+  },
+  {
+    "id": "TZ",
+    "name": "Tanzania",
+    "officialName": "Tanzania",
+    "region": "Africa",
+    "flagEmoji": "🇹🇿",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      34.802078158467836,
+      -6.268451499434014
+    ]
+  },
+  {
+    "id": "TH",
+    "name": "Thailand",
+    "officialName": "Kingdom of Thailand",
+    "region": "Asia",
+    "flagEmoji": "🇹🇭",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      101.00099374320905,
+      15.083065567941238
+    ]
+  },
+  {
+    "id": "BS",
+    "name": "The Bahamas",
+    "officialName": "Commonwealth of the Bahamas",
+    "region": "North America",
+    "flagEmoji": "🇧🇸",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -76.59088381028121,
+      24.279266154945176
+    ]
+  },
+  {
+    "id": "GM",
+    "name": "The Gambia",
+    "officialName": "Republic of The Gambia",
+    "region": "Africa",
+    "flagEmoji": "🇬🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -15.395896024173462,
+      13.45104722394446
+    ]
+  },
+  {
+    "id": "TL",
+    "name": "Timor-Leste",
+    "officialName": "Timor-Leste",
+    "region": "Asia",
+    "flagEmoji": "🇹🇱",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      125.84582349679613,
+      -8.829197284511134
+    ]
+  },
+  {
+    "id": "TG",
+    "name": "Togo",
+    "officialName": "Togo",
+    "region": "Africa",
+    "flagEmoji": "🇹🇬",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      0.9641791637672046,
+      8.520562269257644
+    ]
+  },
+  {
+    "id": "TO",
+    "name": "Tonga",
+    "officialName": "Tonga",
+    "region": "Oceania",
+    "flagEmoji": "🇹🇴",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -174.79980587898802,
+      -20.4161104894254
+    ]
+  },
+  {
+    "id": "TT",
+    "name": "Trinidad and Tobago",
+    "officialName": "Trinidad and Tobago",
+    "region": "North America",
+    "flagEmoji": "🇹🇹",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -61.266138488181404,
+      10.456686940218754
+    ]
+  },
+  {
+    "id": "TN",
+    "name": "Tunisia",
+    "officialName": "Tunisia",
+    "region": "Africa",
+    "flagEmoji": "🇹🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      9.556112637135252,
+      34.08894236780804
+    ]
+  },
+  {
+    "id": "TR",
+    "name": "Turkey",
+    "officialName": "Turkey",
+    "region": "Europe",
+    "flagEmoji": "🇹🇷",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      35.1729633922368,
+      39.13707290920731
+    ]
+  },
+  {
+    "id": "TM",
+    "name": "Turkmenistan",
+    "officialName": "Turkmenistan",
+    "region": "Asia",
+    "flagEmoji": "🇹🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      59.44651184290143,
+      39.125446626476545
+    ]
+  },
+  {
+    "id": "UG",
+    "name": "Uganda",
+    "officialName": "Uganda",
+    "region": "Africa",
+    "flagEmoji": "🇺🇬",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      32.36904684904143,
+      1.2740749179179225
+    ]
+  },
+  {
+    "id": "UA",
+    "name": "Ukraine",
+    "officialName": "Ukraine",
+    "region": "Europe",
+    "flagEmoji": "🇺🇦",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      31.315619623807574,
+      49.19564222949362
+    ]
+  },
+  {
+    "id": "AE",
+    "name": "United Arab Emirates",
+    "officialName": "United Arab Emirates",
+    "region": "Asia",
+    "flagEmoji": "🇦🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      54.29266807627406,
+      23.905129126244116
+    ]
+  },
+  {
+    "id": "GB",
+    "name": "United Kingdom",
+    "officialName": "United Kingdom of Great Britain and Northern Ireland",
+    "region": "Europe",
+    "flagEmoji": "🇬🇧",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -2.758105365723146,
+      54.01148927126155
+    ]
+  },
+  {
+    "id": "US",
+    "name": "United States",
+    "officialName": "the United States of America",
+    "region": "North America",
+    "flagEmoji": "🇺🇸",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -103.6296450709936,
+      44.74379504310712
+    ]
+  },
+  {
+    "id": "UY",
+    "name": "Uruguay",
+    "officialName": "Uruguay",
+    "region": "South America",
+    "flagEmoji": "🇺🇾",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -56.025199672055216,
+      -32.791340365399755
+    ]
+  },
+  {
+    "id": "UZ",
+    "name": "Uzbekistan",
+    "officialName": "Uzbekistan",
+    "region": "Asia",
+    "flagEmoji": "🇺🇿",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      63.30268180847804,
+      41.77554235924722
+    ]
+  },
+  {
+    "id": "VU",
+    "name": "Vanuatu",
+    "officialName": "Vanuatu",
+    "region": "Insular Oceania",
+    "flagEmoji": "🇻🇺",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      167.6752078888191,
+      -16.216948287631666
+    ]
+  },
+  {
+    "id": "VA",
+    "name": "Vatican City",
+    "officialName": "Vatican City",
+    "region": "Europe",
+    "flagEmoji": "🇻🇦",
+    "hasDeepData": false,
+    "recognitionStatus": "un-observer",
+    "centroid": [
+      12.434324379616687,
+      41.90209238063789
+    ]
+  },
+  {
+    "id": "VE",
+    "name": "Venezuela",
+    "officialName": "Bolivarian Republic of Venezuela",
+    "region": "South America",
+    "flagEmoji": "🇻🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      -66.17064991190696,
+      7.122351842889255
+    ]
+  },
+  {
+    "id": "VN",
+    "name": "Vietnam",
+    "officialName": "Socialist Republic of Vietnam",
+    "region": "Asia",
+    "flagEmoji": "🇻🇳",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      106.34646135122732,
+      16.543770241659445
+    ]
+  },
+  {
+    "id": "EH",
+    "name": "Western Sahara",
+    "officialName": "Sahrawi Arab Democratic Republic (proclaimed) / Western Sahara",
+    "region": "Africa",
+    "flagEmoji": "🇪🇭",
+    "hasDeepData": false,
+    "recognitionStatus": "disputed",
+    "centroid": [
+      -12.270709136050085,
+      24.212464969918905
+    ]
+  },
+  {
+    "id": "YE",
+    "name": "Yemen",
+    "officialName": "Yemen",
+    "region": "Asia",
+    "flagEmoji": "🇾🇪",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      47.56769007948867,
+      15.917162506139022
+    ]
+  },
+  {
+    "id": "ZM",
+    "name": "Zambia",
+    "officialName": "Zambia",
+    "region": "Africa",
+    "flagEmoji": "🇿🇲",
+    "hasDeepData": true,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      27.808768988344436,
+      -13.455377410248841
+    ]
+  },
+  {
+    "id": "ZW",
+    "name": "Zimbabwe",
+    "officialName": "Rhodesia",
+    "region": "Africa",
+    "flagEmoji": "🇿🇼",
+    "hasDeepData": false,
+    "recognitionStatus": "un-member",
+    "centroid": [
+      29.85091894028353,
+      -18.99692627755554
+    ]
+  }
+]

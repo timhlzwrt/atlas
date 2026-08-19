@@ -1,0 +1,226 @@
+{
+  "id": "PS",
+  "iso3": "PSE",
+  "name": "Palestine",
+  "officialName": "Palestine",
+  "region": "Asia",
+  "capital": "Ramallah",
+  "flagEmoji": "🇵🇸",
+  "recognitionStatus": "un-observer",
+  "hasDeepData": true,
+  "languages": [
+    "Arabic"
+  ],
+  "currency": "new shekel",
+  "governmentType": "semi-presidential system",
+  "headOfState": "Mahmoud Abbas",
+  "headOfGovernment": "Mohammad Mustafa",
+  "independenceDate": "1988-11-15",
+  "neighbors": [
+    "EG",
+    "IL",
+    "JO"
+  ],
+  "borders": [
+    "EG",
+    "IL",
+    "JO"
+  ],
+  "statistics": {
+    "population": {
+      "value": 5413596,
+      "unit": "people",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Population, total",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PS",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "populationDensity": {
+      "value": 857.390041493776,
+      "unit": "people/km²",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Population density",
+        "url": "https://data.worldbank.org/indicator/EN.POP.DNST?locations=PS",
+        "date": "2023"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "area": {
+      "value": 6025,
+      "unit": "km²",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Land area",
+        "url": "https://data.worldbank.org/indicator/AG.LND.TOTL.K2?locations=PS",
+        "date": "2023"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdp": {
+      "value": 17167100000,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP (current US$)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=PS",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpPerCapita": {
+      "value": 3171.10844621579,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP per capita (current US$)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=PS",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpGrowth": {
+      "value": 4.34444072337577,
+      "unit": "%",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP growth (annual %)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=PS",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpPpp": {
+      "value": 27066426398.6286,
+      "unit": "intl $",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP, PPP (current international $)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=PS",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "inflation": {
+      "value": 9.80840118100493,
+      "unit": "%",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Inflation, consumer prices (annual %)",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=PS",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "unemployment": {
+      "value": 24.42,
+      "unit": "% of labor force",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Unemployment, total (% of labor force)",
+        "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=PS",
+        "date": "2022"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "lifeExpectancy": {
+      "value": 69.213,
+      "unit": "years",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Life expectancy at birth",
+        "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=PS",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "literacyRate": {
+      "value": 97.9389541214558,
+      "unit": "% of adults",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Literacy rate, adult total",
+        "url": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=PS",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    }
+  },
+  "sources": [
+    {
+      "org": "Wikidata",
+      "dataset": "Wikidata item Q219060",
+      "url": "https://www.wikidata.org/wiki/Q219060",
+      "date": "2026-08-19"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Population, total",
+      "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PS",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Population density",
+      "url": "https://data.worldbank.org/indicator/EN.POP.DNST?locations=PS",
+      "date": "2023"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Land area",
+      "url": "https://data.worldbank.org/indicator/AG.LND.TOTL.K2?locations=PS",
+      "date": "2023"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP (current US$)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=PS",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP per capita (current US$)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=PS",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP growth (annual %)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=PS",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP, PPP (current international $)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=PS",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Inflation, consumer prices (annual %)",
+      "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=PS",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Unemployment, total (% of labor force)",
+      "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=PS",
+      "date": "2022"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Life expectancy at birth",
+      "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=PS",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Literacy rate, adult total",
+      "url": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=PS",
+      "date": "2024"
+    }
+  ]
+}

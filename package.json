@@ -1,0 +1,48 @@
+{
+  "name": "ls.tjh.li",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "data:build": "tsx data-pipeline/build-countries.ts && tsx data-pipeline/build-curated.ts",
+    "data:build:fresh": "DATA_FRESH=1 tsx data-pipeline/build-countries.ts && tsx data-pipeline/build-curated.ts",
+    "typecheck:pipeline": "tsc -p tsconfig.pipeline.json",
+    "typecheck:functions": "tsc -p tsconfig.functions.json"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-globe.gl": "^2.38.0",
+    "three": "^0.185.1",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260819.1",
+    "@types/d3-geo": "^3.1.1",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.185.4",
+    "@types/topojson-client": "^3.1.5",
+    "@vitejs/plugin-react": "^6.0.4",
+    "oxlint": "^1.75.0",
+    "tsx": "^4.23.12",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.0",
+    "wrangler": "^4.124.0"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true,
+    "esbuild@0.28.2": true,
+    "esbuild@0.28.1": true,
+    "msgpackr-extract@3.0.4": true,
+    "workerd@1.20260815.1": true
+  }
+}

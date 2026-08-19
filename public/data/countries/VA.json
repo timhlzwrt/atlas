@@ -1,0 +1,35 @@
+{
+  "id": "VA",
+  "iso3": "VAT",
+  "name": "Vatican City",
+  "officialName": "Vatican City",
+  "region": "Europe",
+  "capital": "Vatican City",
+  "flagEmoji": "🇻🇦",
+  "recognitionStatus": "un-observer",
+  "hasDeepData": false,
+  "languages": [
+    "Latin",
+    "Italian"
+  ],
+  "currency": "euro",
+  "governmentType": "constitutional monarchy",
+  "headOfState": "Leo XIV",
+  "headOfGovernment": "Raffaella Petrini",
+  "independenceDate": "1929-02-11",
+  "neighbors": [
+    "IT"
+  ],
+  "borders": [
+    "IT"
+  ],
+  "statistics": {},
+  "sources": [
+    {
+      "org": "Wikidata",
+      "dataset": "Wikidata item Q237",
+      "url": "https://www.wikidata.org/wiki/Q237",
+      "date": "2026-08-19"
+    }
+  ]
+}

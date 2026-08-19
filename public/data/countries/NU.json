@@ -1,0 +1,30 @@
+{
+  "id": "NU",
+  "iso3": "NIU",
+  "name": "Niue",
+  "officialName": "Niue",
+  "region": "Insular Oceania",
+  "capital": "Alofi",
+  "flagEmoji": "🇳🇺",
+  "recognitionStatus": "un-observer",
+  "hasDeepData": false,
+  "languages": [
+    "English",
+    "Niuean"
+  ],
+  "currency": "New Zealand dollar",
+  "headOfState": "Charles III",
+  "headOfGovernment": "Dalton Tagelagi",
+  "independenceDate": "1974-01-01",
+  "neighbors": [],
+  "borders": [],
+  "statistics": {},
+  "sources": [
+    {
+      "org": "Wikidata",
+      "dataset": "Wikidata item Q34020",
+      "url": "https://www.wikidata.org/wiki/Q34020",
+      "date": "2026-08-19"
+    }
+  ]
+}

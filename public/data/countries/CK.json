@@ -1,0 +1,30 @@
+{
+  "id": "CK",
+  "iso3": "COK",
+  "name": "Cook Islands",
+  "officialName": "Cook Islands",
+  "region": "Insular Oceania",
+  "capital": "Avarua",
+  "flagEmoji": "🇨🇰",
+  "recognitionStatus": "un-observer",
+  "hasDeepData": false,
+  "languages": [
+    "English",
+    "Cook Islands Maori"
+  ],
+  "currency": "Cook Islands dollar",
+  "headOfState": "Charles III",
+  "headOfGovernment": "Mark Brown",
+  "independenceDate": "1965-08-04",
+  "neighbors": [],
+  "borders": [],
+  "statistics": {},
+  "sources": [
+    {
+      "org": "Wikidata",
+      "dataset": "Wikidata item Q26988",
+      "url": "https://www.wikidata.org/wiki/Q26988",
+      "date": "2026-08-19"
+    }
+  ]
+}

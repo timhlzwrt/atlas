@@ -1,0 +1,59 @@
+{
+  "id": "TW",
+  "iso3": "TWN",
+  "name": "Taiwan",
+  "officialName": "Taiwan",
+  "region": "Asia",
+  "capital": "Taipei",
+  "flagEmoji": "🇹🇼",
+  "recognitionStatus": "partially-recognized",
+  "hasDeepData": false,
+  "languages": [
+    "Taiwanese Sign Language",
+    "Amis",
+    "Taiwanese Hokkien",
+    "Rukai",
+    "Bunun",
+    "Kanakanavu",
+    "Standard Taiwanese Mandarin",
+    "Paiwan",
+    "Yami",
+    "Atayal",
+    "Saaroa",
+    "Kavalan",
+    "Tsou",
+    "Seediq",
+    "Puyuma",
+    "Saisiyat",
+    "Sakizaya",
+    "Taiwanese Hakka",
+    "Truku",
+    "Matsu dialect",
+    "Kinmen dialect",
+    "Wuqiu dialect"
+  ],
+  "currency": "New Taiwan dollar",
+  "governmentType": "democracy",
+  "headOfState": "Lai Ching-te",
+  "headOfGovernment": "Cho Jung-tai",
+  "independenceDate": "1912-01-01",
+  "neighbors": [
+    "JP",
+    "CN",
+    "PH"
+  ],
+  "borders": [
+    "JP",
+    "CN",
+    "PH"
+  ],
+  "statistics": {},
+  "sources": [
+    {
+      "org": "Wikidata",
+      "dataset": "Wikidata item Q865",
+      "url": "https://www.wikidata.org/wiki/Q865",
+      "date": "2026-08-19"
+    }
+  ]
+}

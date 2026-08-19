@@ -1,0 +1,258 @@
+{
+  "id": "MN",
+  "iso3": "MNG",
+  "name": "Mongolia",
+  "officialName": "Mongolia",
+  "region": "Asia",
+  "capital": "Ulaanbaatar",
+  "flagEmoji": "🇲🇳",
+  "recognitionStatus": "un-member",
+  "hasDeepData": true,
+  "languages": [
+    "Mongolian"
+  ],
+  "currency": "Mongolian tögrög",
+  "governmentType": "parliamentary system",
+  "headOfState": "Khurelsukh Ukhnaa",
+  "headOfGovernment": "Uchral Nyam-Osor",
+  "independenceDate": "1992-02-12",
+  "neighbors": [
+    "CN",
+    "RU"
+  ],
+  "borders": [
+    "CN",
+    "RU"
+  ],
+  "statistics": {
+    "population": {
+      "value": 3568978,
+      "unit": "people",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Population, total",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MN",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "populationDensity": {
+      "value": 2.23365125312889,
+      "unit": "people/km²",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Population density",
+        "url": "https://data.worldbank.org/indicator/EN.POP.DNST?locations=MN",
+        "date": "2023"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "area": {
+      "value": 1558499.786,
+      "unit": "km²",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Land area",
+        "url": "https://data.worldbank.org/indicator/AG.LND.TOTL.K2?locations=MN",
+        "date": "2023"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdp": {
+      "value": 25369107325.4549,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP (current US$)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=MN",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpPerCapita": {
+      "value": 7108.22743246244,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP per capita (current US$)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=MN",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpGrowth": {
+      "value": 6.84391415938607,
+      "unit": "%",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP growth (annual %)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=MN",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpPpp": {
+      "value": 74226766695.0254,
+      "unit": "intl $",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP, PPP (current international $)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=MN",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "inflation": {
+      "value": 8.60536487369695,
+      "unit": "%",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Inflation, consumer prices (annual %)",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=MN",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "unemployment": {
+      "value": 5.233,
+      "unit": "% of labor force",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Unemployment, total (% of labor force)",
+        "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=MN",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "militaryExpenditure": {
+      "value": 180843441.375323,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Military expenditure (current US$)",
+        "url": "https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=MN",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "militaryExpenditurePctGdp": {
+      "value": 0.742307300960191,
+      "unit": "% of GDP",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Military expenditure (% of GDP)",
+        "url": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS?locations=MN",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "lifeExpectancy": {
+      "value": 72.3980487804878,
+      "unit": "years",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Life expectancy at birth",
+        "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=MN",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "literacyRate": {
+      "value": 98.6399993896484,
+      "unit": "% of adults",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Literacy rate, adult total",
+        "url": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=MN",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    }
+  },
+  "sources": [
+    {
+      "org": "Wikidata",
+      "dataset": "Wikidata item Q711",
+      "url": "https://www.wikidata.org/wiki/Q711",
+      "date": "2026-08-19"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Population, total",
+      "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=MN",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Population density",
+      "url": "https://data.worldbank.org/indicator/EN.POP.DNST?locations=MN",
+      "date": "2023"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Land area",
+      "url": "https://data.worldbank.org/indicator/AG.LND.TOTL.K2?locations=MN",
+      "date": "2023"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP (current US$)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=MN",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP per capita (current US$)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=MN",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP growth (annual %)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=MN",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP, PPP (current international $)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=MN",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Inflation, consumer prices (annual %)",
+      "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=MN",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Unemployment, total (% of labor force)",
+      "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=MN",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Military expenditure (current US$)",
+      "url": "https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=MN",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Military expenditure (% of GDP)",
+      "url": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS?locations=MN",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Life expectancy at birth",
+      "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=MN",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Literacy rate, adult total",
+      "url": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=MN",
+      "date": "2024"
+    }
+  ]
+}

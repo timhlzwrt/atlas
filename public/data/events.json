@@ -1,0 +1,1188 @@
+[
+  {
+    "id": "congress-of-vienna",
+    "title": "Congress of Vienna",
+    "date": "1814-09-18",
+    "endDate": "1815-06-09",
+    "description": "European powers redrew the map of Europe after the Napoleonic Wars, establishing a balance-of-power system that shaped the continent for decades.",
+    "countries": [
+      "AT",
+      "FR",
+      "GB",
+      "RU",
+      "DE"
+    ],
+    "location": {
+      "lat": 48.2082,
+      "lng": 16.3738
+    },
+    "category": "treaty",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Congress of Vienna",
+        "url": "https://en.wikipedia.org/wiki/Congress_of_Vienna",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "greek-independence",
+    "title": "Greek War of Independence",
+    "date": "1821-03-25",
+    "endDate": "1832-05-07",
+    "description": "Greece won independence from the Ottoman Empire after a decade-long war, becoming one of the first successful nationalist independence movements in Europe.",
+    "countries": [
+      "GR",
+      "TR"
+    ],
+    "location": {
+      "lat": 37.9838,
+      "lng": 23.7275
+    },
+    "category": "independence",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Greek War of Independence",
+        "url": "https://en.wikipedia.org/wiki/Greek_War_of_Independence",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "revolutions-of-1848",
+    "title": "Revolutions of 1848",
+    "date": "1848-02-22",
+    "endDate": "1849-11-01",
+    "description": "A wave of republican and nationalist uprisings swept across Europe, from France to the German and Italian states to the Austrian Empire, reshaping political ideas even where the revolutions themselves failed.",
+    "countries": [
+      "FR",
+      "DE",
+      "AT",
+      "IT",
+      "HU"
+    ],
+    "category": "revolution",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Revolutions of 1848",
+        "url": "https://en.wikipedia.org/wiki/Revolutions_of_1848",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "italian-unification",
+    "title": "Unification of Italy",
+    "date": "1861-03-17",
+    "description": "The Kingdom of Italy was proclaimed after decades of political and military campaigns to unify the Italian peninsula's separate states.",
+    "countries": [
+      "IT"
+    ],
+    "location": {
+      "lat": 41.9028,
+      "lng": 12.4964
+    },
+    "category": "formation",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Unification of Italy",
+        "url": "https://en.wikipedia.org/wiki/Unification_of_Italy",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "us-civil-war",
+    "title": "American Civil War",
+    "date": "1861-04-12",
+    "endDate": "1865-05-09",
+    "description": "A war between the United States and eleven breakaway Southern states over slavery and federal power, ending in the abolition of slavery and the preservation of the Union.",
+    "countries": [
+      "US"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "American Civil War",
+        "url": "https://en.wikipedia.org/wiki/American_Civil_War",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "meiji-restoration",
+    "title": "Meiji Restoration",
+    "date": "1868-01-03",
+    "description": "Imperial rule was restored in Japan, launching rapid industrialization and modernization that transformed it into a major world power within decades.",
+    "countries": [
+      "JP"
+    ],
+    "category": "regime-change",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Meiji Restoration",
+        "url": "https://en.wikipedia.org/wiki/Meiji_Restoration",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "german-unification",
+    "title": "Unification of Germany",
+    "date": "1871-01-18",
+    "description": "Following Prussia's victory in the Franco-Prussian War, the German states unified into the German Empire, fundamentally altering the European balance of power.",
+    "countries": [
+      "DE",
+      "FR"
+    ],
+    "location": {
+      "lat": 52.52,
+      "lng": 13.405
+    },
+    "category": "formation",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Unification of Germany",
+        "url": "https://en.wikipedia.org/wiki/Unification_of_Germany",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "scramble-for-africa",
+    "title": "Berlin Conference and the Scramble for Africa",
+    "date": "1884-11-15",
+    "endDate": "1885-02-26",
+    "description": "European powers formalized rules for the colonization of Africa, leading to the partition of nearly the entire continent among a handful of colonial empires.",
+    "countries": [
+      "DE",
+      "GB",
+      "FR",
+      "NG",
+      "CD",
+      "ZA"
+    ],
+    "category": "diplomatic",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Berlin Conference",
+        "url": "https://en.wikipedia.org/wiki/Berlin_Conference",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "ww1-start",
+    "title": "Outbreak of World War I",
+    "date": "1914-07-28",
+    "description": "The assassination of Archduke Franz Ferdinand triggered a system of alliances that drew most of Europe's great powers into a war that would kill over 15 million people.",
+    "countries": [
+      "AT",
+      "DE",
+      "FR",
+      "GB",
+      "RU",
+      "RS"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "World War I",
+        "url": "https://en.wikipedia.org/wiki/World_War_I",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "russian-revolution",
+    "title": "Russian Revolution",
+    "date": "1917-03-08",
+    "endDate": "1917-11-08",
+    "description": "Two revolutions toppled the Russian monarchy and then the provisional government, bringing the Bolsheviks to power and setting the stage for the Soviet Union.",
+    "countries": [
+      "RU"
+    ],
+    "location": {
+      "lat": 59.9311,
+      "lng": 30.3609
+    },
+    "category": "revolution",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Russian Revolution",
+        "url": "https://en.wikipedia.org/wiki/Russian_Revolution",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "ww1-end",
+    "title": "End of World War I / Treaty of Versailles",
+    "date": "1918-11-11",
+    "endDate": "1919-06-28",
+    "description": "An armistice ended the fighting, and the Treaty of Versailles imposed harsh terms on Germany, redrew national borders, and created the League of Nations.",
+    "countries": [
+      "DE",
+      "FR",
+      "GB",
+      "US",
+      "AT",
+      "PL"
+    ],
+    "category": "treaty",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Treaty of Versailles",
+        "url": "https://en.wikipedia.org/wiki/Treaty_of_Versailles",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "indian-independence-movement-start",
+    "title": "Non-Cooperation Movement in India",
+    "date": "1920-09-01",
+    "description": "Mahatma Gandhi launched a mass campaign of non-violent resistance against British colonial rule, marking a turning point in the Indian independence movement.",
+    "countries": [
+      "IN",
+      "GB"
+    ],
+    "category": "independence",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Non-cooperation movement",
+        "url": "https://en.wikipedia.org/wiki/Non-cooperation_movement",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "great-depression",
+    "title": "The Great Depression",
+    "date": "1929-10-29",
+    "endDate": "1939-09-01",
+    "description": "A global economic collapse triggered by the Wall Street Crash caused mass unemployment worldwide and reshaped economic policy for a generation.",
+    "countries": [
+      "US",
+      "DE",
+      "GB",
+      "FR"
+    ],
+    "category": "economic",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Great Depression",
+        "url": "https://en.wikipedia.org/wiki/Great_Depression",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "nazi-regime",
+    "title": "Nazi seizure of power in Germany",
+    "date": "1933-01-30",
+    "description": "Adolf Hitler was appointed Chancellor of Germany, and the Nazi Party rapidly dismantled democratic institutions to establish a one-party dictatorship.",
+    "countries": [
+      "DE"
+    ],
+    "category": "regime-change",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Machtergreifung",
+        "url": "https://en.wikipedia.org/wiki/Machtergreifung",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "ww2-start",
+    "title": "Outbreak of World War II",
+    "date": "1939-09-01",
+    "description": "Germany's invasion of Poland triggered declarations of war by Britain and France, beginning the deadliest conflict in human history.",
+    "countries": [
+      "DE",
+      "PL",
+      "GB",
+      "FR"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "World War II",
+        "url": "https://en.wikipedia.org/wiki/World_War_II",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "ww2-end",
+    "title": "End of World War II",
+    "date": "1945-09-02",
+    "description": "Japan's formal surrender ended World War II, following Germany's surrender in May. The war reshaped the global order and set the stage for the Cold War.",
+    "countries": [
+      "DE",
+      "JP",
+      "US",
+      "GB",
+      "RU"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "End of World War II in Europe",
+        "url": "https://en.wikipedia.org/wiki/End_of_World_War_II_in_Europe",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "un-founded",
+    "title": "Founding of the United Nations",
+    "date": "1945-10-24",
+    "description": "Fifty-one countries founded the United Nations in the aftermath of World War II, establishing a global forum for diplomacy, peacekeeping, and international law.",
+    "countries": [
+      "US",
+      "GB",
+      "FR",
+      "RU",
+      "CN"
+    ],
+    "location": {
+      "lat": 40.7489,
+      "lng": -73.968
+    },
+    "category": "organization",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "United Nations",
+        "url": "https://en.wikipedia.org/wiki/United_Nations",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "indian-independence",
+    "title": "Independence and Partition of India",
+    "date": "1947-08-15",
+    "description": "British India gained independence and was partitioned into India and Pakistan, triggering one of the largest mass migrations in history amid widespread violence.",
+    "countries": [
+      "IN",
+      "PK",
+      "GB"
+    ],
+    "category": "independence",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Partition of India",
+        "url": "https://en.wikipedia.org/wiki/Partition_of_India",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "israel-founded",
+    "title": "Founding of the State of Israel",
+    "date": "1948-05-14",
+    "description": "Israel declared independence following the UN partition plan for Palestine, immediately triggering the first Arab-Israeli war.",
+    "countries": [
+      "IL",
+      "PS",
+      "EG",
+      "JO",
+      "SY",
+      "LB"
+    ],
+    "location": {
+      "lat": 31.7683,
+      "lng": 35.2137
+    },
+    "category": "formation",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "1948 Arab–Israeli War",
+        "url": "https://en.wikipedia.org/wiki/1948_Arab%E2%80%93Israeli_War",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "nato-founded",
+    "title": "Founding of NATO",
+    "date": "1949-04-04",
+    "description": "Twelve North American and European countries formed the North Atlantic Treaty Organization, a collective-defense alliance that became central to Cold War geopolitics.",
+    "countries": [
+      "US",
+      "GB",
+      "FR",
+      "CA"
+    ],
+    "category": "organization",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "NATO",
+        "url": "https://en.wikipedia.org/wiki/NATO",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "prc-founded",
+    "title": "Founding of the People's Republic of China",
+    "date": "1949-10-01",
+    "description": "Mao Zedong proclaimed the People's Republic of China after the Communist Party's victory in the Chinese Civil War, sending the Nationalist government to Taiwan.",
+    "countries": [
+      "CN",
+      "TW"
+    ],
+    "category": "regime-change",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Proclamation of the People's Republic of China",
+        "url": "https://en.wikipedia.org/wiki/Proclamation_of_the_People's_Republic_of_China",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "korean-war",
+    "title": "Korean War",
+    "date": "1950-06-25",
+    "endDate": "1953-07-27",
+    "description": "North Korea's invasion of South Korea drew in a UN-led coalition and later China, ending in an armistice that left the peninsula divided along the 38th parallel.",
+    "countries": [
+      "KR",
+      "KP",
+      "CN",
+      "US"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Korean War",
+        "url": "https://en.wikipedia.org/wiki/Korean_War",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "vietnam-war",
+    "title": "Vietnam War",
+    "date": "1955-11-01",
+    "endDate": "1975-04-30",
+    "description": "A prolonged conflict between communist North Vietnam and the US-backed South ended in North Vietnamese victory and the reunification of Vietnam under communist rule.",
+    "countries": [
+      "VN",
+      "US"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Vietnam War",
+        "url": "https://en.wikipedia.org/wiki/Vietnam_War",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "suez-crisis",
+    "title": "Suez Crisis",
+    "date": "1956-10-29",
+    "endDate": "1957-03-07",
+    "description": "Egypt's nationalization of the Suez Canal triggered an invasion by Britain, France, and Israel, which ultimately withdrew under US and Soviet pressure — a marker of Britain and France's declining global power.",
+    "countries": [
+      "EG",
+      "GB",
+      "FR",
+      "IL"
+    ],
+    "category": "war",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Suez Crisis",
+        "url": "https://en.wikipedia.org/wiki/Suez_Crisis",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "eu-founded",
+    "title": "Treaty of Rome / founding of the EEC",
+    "date": "1957-03-25",
+    "description": "Six European countries signed the Treaty of Rome, establishing the European Economic Community — the direct institutional ancestor of today's European Union.",
+    "countries": [
+      "DE",
+      "FR",
+      "IT"
+    ],
+    "category": "organization",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Treaty of Rome",
+        "url": "https://en.wikipedia.org/wiki/Treaty_of_Rome",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "african-decolonization",
+    "title": "\"Year of Africa\": mass African decolonization",
+    "date": "1960-01-01",
+    "endDate": "1960-12-31",
+    "description": "Seventeen African countries gained independence from colonial rule in a single year, marking the peak of the continent's decolonization wave.",
+    "countries": [
+      "NG",
+      "CD",
+      "SN",
+      "ML",
+      "MG"
+    ],
+    "category": "independence",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Year of Africa",
+        "url": "https://en.wikipedia.org/wiki/Year_of_Africa",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "berlin-wall-built",
+    "title": "Construction of the Berlin Wall",
+    "date": "1961-08-13",
+    "description": "East Germany erected a wall dividing East and West Berlin, becoming the most potent physical symbol of the Cold War's division of Europe.",
+    "countries": [
+      "DE"
+    ],
+    "location": {
+      "lat": 52.5163,
+      "lng": 13.3777
+    },
+    "category": "political",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Berlin Wall",
+        "url": "https://en.wikipedia.org/wiki/Berlin_Wall",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "cuban-missile-crisis",
+    "title": "Cuban Missile Crisis",
+    "date": "1962-10-16",
+    "endDate": "1962-10-29",
+    "description": "A thirteen-day confrontation over Soviet nuclear missiles in Cuba brought the United States and Soviet Union closer to nuclear war than at any other point in the Cold War.",
+    "countries": [
+      "CU",
+      "US",
+      "RU"
+    ],
+    "category": "diplomatic",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Cuban Missile Crisis",
+        "url": "https://en.wikipedia.org/wiki/Cuban_Missile_Crisis",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "oil-crisis-1973",
+    "title": "1973 Oil Crisis",
+    "date": "1973-10-17",
+    "endDate": "1974-03-18",
+    "description": "An OPEC oil embargo, imposed in response to Western support for Israel in the Yom Kippur War, quadrupled oil prices and triggered a global economic shock.",
+    "countries": [
+      "SA",
+      "US",
+      "GB",
+      "DE"
+    ],
+    "category": "economic",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "1973 oil crisis",
+        "url": "https://en.wikipedia.org/wiki/1973_oil_crisis",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "iranian-revolution",
+    "title": "Iranian Revolution",
+    "date": "1978-01-07",
+    "endDate": "1979-02-11",
+    "description": "Mass protests toppled the Shah of Iran, and the country was reconstituted as an Islamic Republic under Ayatollah Khomeini — reshaping Middle Eastern geopolitics for decades.",
+    "countries": [
+      "IR"
+    ],
+    "category": "revolution",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Iranian Revolution",
+        "url": "https://en.wikipedia.org/wiki/Iranian_Revolution",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "soviet-afghan-war",
+    "title": "Soviet–Afghan War",
+    "date": "1979-12-24",
+    "endDate": "1989-02-15",
+    "description": "The Soviet Union invaded Afghanistan to support its communist government; a decade-long insurgency, backed by the US and others, ended in Soviet withdrawal.",
+    "countries": [
+      "AF",
+      "RU",
+      "US"
+    ],
+    "category": "war",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Soviet–Afghan War",
+        "url": "https://en.wikipedia.org/wiki/Soviet%E2%80%93Afghan_War",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "tiananmen-square",
+    "title": "Tiananmen Square protests and crackdown",
+    "date": "1989-04-15",
+    "endDate": "1989-06-04",
+    "description": "Student-led pro-democracy protests in Beijing were suppressed by the Chinese military, resulting in a still-disputed number of deaths and a lasting political chill.",
+    "countries": [
+      "CN"
+    ],
+    "location": {
+      "lat": 39.9055,
+      "lng": 116.3976
+    },
+    "category": "political",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "1989 Tiananmen Square protests and massacre",
+        "url": "https://en.wikipedia.org/wiki/1989_Tiananmen_Square_protests_and_massacre",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "berlin-wall-falls",
+    "title": "Fall of the Berlin Wall",
+    "date": "1989-11-09",
+    "description": "East Germany opened its borders, and crowds tore down the Berlin Wall, becoming the defining symbol of the collapse of communism in Eastern Europe.",
+    "countries": [
+      "DE"
+    ],
+    "location": {
+      "lat": 52.5163,
+      "lng": 13.3777
+    },
+    "category": "political",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Fall of the Berlin Wall",
+        "url": "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "gulf-war",
+    "title": "Gulf War",
+    "date": "1990-08-02",
+    "endDate": "1991-02-28",
+    "description": "A US-led coalition expelled Iraqi forces from Kuwait after Iraq's invasion and annexation of its smaller neighbor.",
+    "countries": [
+      "IQ",
+      "US",
+      "SA"
+    ],
+    "category": "war",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Gulf War",
+        "url": "https://en.wikipedia.org/wiki/Gulf_War",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "german-reunification",
+    "title": "German Reunification",
+    "date": "1990-10-03",
+    "description": "East and West Germany formally reunified, ending 45 years of division after World War II.",
+    "countries": [
+      "DE"
+    ],
+    "category": "formation",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "German reunification",
+        "url": "https://en.wikipedia.org/wiki/German_reunification",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "yugoslav-wars",
+    "title": "Yugoslav Wars",
+    "date": "1991-03-31",
+    "endDate": "2001-11-12",
+    "description": "A series of ethnic conflicts accompanied the breakup of Yugoslavia into independent states, marked by mass atrocities including the Srebrenica genocide.",
+    "countries": [
+      "RS",
+      "BA",
+      "HR",
+      "SI",
+      "MK",
+      "ME",
+      "XK"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Yugoslav Wars",
+        "url": "https://en.wikipedia.org/wiki/Yugoslav_Wars",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "ussr-dissolution",
+    "title": "Dissolution of the Soviet Union",
+    "date": "1991-12-26",
+    "description": "The Soviet Union formally dissolved into fifteen independent states, ending the Cold War and fundamentally reshaping the geopolitical map of Eurasia.",
+    "countries": [
+      "RU",
+      "UA"
+    ],
+    "location": {
+      "lat": 55.7558,
+      "lng": 37.6173
+    },
+    "category": "dissolution",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Dissolution of the Soviet Union",
+        "url": "https://en.wikipedia.org/wiki/Dissolution_of_the_Soviet_Union",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "maastricht-treaty",
+    "title": "Maastricht Treaty / founding of the European Union",
+    "date": "1992-02-07",
+    "description": "European Community members signed the Maastricht Treaty, formally establishing the European Union and laying the groundwork for the euro.",
+    "countries": [
+      "DE",
+      "FR",
+      "IT"
+    ],
+    "category": "organization",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Maastricht Treaty",
+        "url": "https://en.wikipedia.org/wiki/Maastricht_Treaty",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "rwandan-genocide",
+    "title": "Rwandan Genocide",
+    "date": "1994-04-07",
+    "endDate": "1994-07-15",
+    "description": "Extremist Hutu militias killed an estimated 800,000 Tutsi and moderate Hutu over roughly 100 days, one of the fastest and most intensive genocides in modern history.",
+    "countries": [
+      "RW"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Rwandan genocide",
+        "url": "https://en.wikipedia.org/wiki/Rwandan_genocide",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "euro-introduced",
+    "title": "Introduction of the Euro",
+    "date": "1999-01-01",
+    "description": "Eleven European Union member states adopted the euro as a common currency, with physical notes and coins following in 2002.",
+    "countries": [
+      "DE",
+      "FR",
+      "IT",
+      "ES"
+    ],
+    "category": "economic",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Euro",
+        "url": "https://en.wikipedia.org/wiki/Euro",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "september-11",
+    "title": "September 11 attacks",
+    "date": "2001-09-11",
+    "description": "Al-Qaeda hijackers attacked the World Trade Center and the Pentagon, killing nearly 3,000 people and triggering the US-led \"War on Terror.\"",
+    "countries": [
+      "US",
+      "AF"
+    ],
+    "location": {
+      "lat": 40.7115,
+      "lng": -74.0134
+    },
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "September 11 attacks",
+        "url": "https://en.wikipedia.org/wiki/September_11_attacks",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "iraq-war",
+    "title": "Iraq War",
+    "date": "2003-03-20",
+    "endDate": "2011-12-18",
+    "description": "A US-led coalition invaded Iraq and toppled Saddam Hussein, followed by a prolonged insurgency and sectarian conflict with lasting regional consequences.",
+    "countries": [
+      "IQ",
+      "US"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Iraq War",
+        "url": "https://en.wikipedia.org/wiki/Iraq_War",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "eu-eastern-enlargement",
+    "title": "EU Eastern Enlargement",
+    "date": "2004-05-01",
+    "description": "Ten countries, most of them formerly under Soviet influence, joined the European Union in its largest single expansion — reshaping the continent's economic and political geography.",
+    "countries": [
+      "PL",
+      "CZ",
+      "HU",
+      "SK"
+    ],
+    "category": "organization",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "2004 enlargement of the European Union",
+        "url": "https://en.wikipedia.org/wiki/2004_enlargement_of_the_European_Union",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "global-financial-crisis",
+    "title": "Global Financial Crisis",
+    "date": "2008-09-15",
+    "endDate": "2009-06-01",
+    "description": "The collapse of Lehman Brothers triggered the worst global financial crisis since the Great Depression, leading to recessions worldwide and sweeping bank bailouts.",
+    "countries": [
+      "US",
+      "GB",
+      "DE"
+    ],
+    "category": "economic",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "2007–2008 financial crisis",
+        "url": "https://en.wikipedia.org/wiki/2007%E2%80%932008_financial_crisis",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "arab-spring",
+    "title": "Arab Spring",
+    "date": "2010-12-18",
+    "endDate": "2012-12-01",
+    "description": "A wave of pro-democracy protests and uprisings swept the Arab world, toppling long-standing rulers in Tunisia, Egypt, Libya, and Yemen and triggering the Syrian civil war.",
+    "countries": [
+      "TN",
+      "EG",
+      "LY",
+      "SY",
+      "YE"
+    ],
+    "category": "revolution",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Arab Spring",
+        "url": "https://en.wikipedia.org/wiki/Arab_Spring",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "syrian-civil-war",
+    "title": "Syrian Civil War",
+    "date": "2011-03-15",
+    "description": "A civil war grew out of Arab Spring protests against the Assad government, drawing in regional and global powers and displacing millions of Syrians.",
+    "countries": [
+      "SY"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Syrian civil war",
+        "url": "https://en.wikipedia.org/wiki/Syrian_civil_war",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "crimea-annexation",
+    "title": "Russian annexation of Crimea",
+    "date": "2014-02-20",
+    "endDate": "2014-03-18",
+    "description": "Russia annexed Crimea from Ukraine following a disputed referendum, a move not recognized by most of the international community and a direct precursor to the wider Russia-Ukraine conflict.",
+    "countries": [
+      "RU",
+      "UA"
+    ],
+    "location": {
+      "lat": 45.3453,
+      "lng": 34.4697
+    },
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Annexation of Crimea by the Russian Federation",
+        "url": "https://en.wikipedia.org/wiki/Annexation_of_Crimea_by_the_Russian_Federation",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "brexit-referendum",
+    "title": "Brexit referendum",
+    "date": "2016-06-23",
+    "description": "The United Kingdom voted to leave the European Union, beginning a process that concluded with formal withdrawal in January 2020.",
+    "countries": [
+      "GB"
+    ],
+    "category": "political",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "2016 United Kingdom European Union membership referendum",
+        "url": "https://en.wikipedia.org/wiki/2016_United_Kingdom_European_Union_membership_referendum",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "brexit-complete",
+    "title": "United Kingdom formally leaves the European Union",
+    "date": "2020-01-31",
+    "description": "The UK's withdrawal from the EU took legal effect, ending 47 years of membership and reshaping UK-EU trade and diplomatic relations.",
+    "countries": [
+      "GB"
+    ],
+    "category": "political",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Brexit",
+        "url": "https://en.wikipedia.org/wiki/Brexit",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "covid-pandemic",
+    "title": "COVID-19 declared a global pandemic",
+    "date": "2020-03-11",
+    "description": "The World Health Organization declared COVID-19 a pandemic; the resulting lockdowns, over 7 million recorded deaths, and economic disruption reshaped global politics and public health policy.",
+    "countries": [
+      "CN",
+      "US",
+      "IT"
+    ],
+    "category": "economic",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "COVID-19 pandemic",
+        "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "russia-invades-ukraine",
+    "title": "Russian invasion of Ukraine",
+    "date": "2022-02-24",
+    "description": "Russia launched a full-scale invasion of Ukraine, triggering Europe's largest war since World War II, mass sanctions on Russia, and a major realignment of European security policy.",
+    "countries": [
+      "RU",
+      "UA"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Russian invasion of Ukraine",
+        "url": "https://en.wikipedia.org/wiki/Russian_invasion_of_Ukraine",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "nato-nordic-expansion",
+    "title": "Finland and Sweden join NATO",
+    "date": "2023-04-04",
+    "endDate": "2024-03-07",
+    "description": "Finland and then Sweden abandoned decades of military non-alignment to join NATO in direct response to Russia's invasion of Ukraine.",
+    "countries": [
+      "FI",
+      "SE"
+    ],
+    "category": "organization",
+    "importance": 2,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Enlargement of NATO",
+        "url": "https://en.wikipedia.org/wiki/Enlargement_of_NATO",
+        "date": "2026-08-19"
+      }
+    ]
+  },
+  {
+    "id": "israel-hamas-war",
+    "title": "Israel-Hamas War",
+    "date": "2023-10-07",
+    "description": "Hamas's attack on Israel and the ensuing war in Gaza caused mass casualties on both sides and triggered a wider regional crisis and international divisions over the conflict.",
+    "countries": [
+      "IL",
+      "PS"
+    ],
+    "category": "war",
+    "importance": 3,
+    "sources": [
+      {
+        "org": "Wikipedia",
+        "dataset": "Israel–Hamas war",
+        "url": "https://en.wikipedia.org/wiki/Israel%E2%80%93Hamas_war",
+        "date": "2026-08-19"
+      }
+    ]
+  }
+]

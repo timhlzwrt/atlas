@@ -1,0 +1,248 @@
+{
+  "id": "SC",
+  "iso3": "SYC",
+  "name": "Seychelles",
+  "officialName": "Seychelles",
+  "region": "Africa",
+  "capital": "Victoria",
+  "flagEmoji": "🇸🇨",
+  "recognitionStatus": "un-member",
+  "hasDeepData": false,
+  "languages": [
+    "French",
+    "English",
+    "Seychellois Creole"
+  ],
+  "currency": "Seychellois rupee",
+  "headOfState": "Patrick Herminie",
+  "headOfGovernment": "Patrick Herminie",
+  "independenceDate": "1976-06-29",
+  "neighbors": [
+    "FR",
+    "TZ",
+    "KM",
+    "MG",
+    "MU"
+  ],
+  "borders": [
+    "FR",
+    "TZ",
+    "KM",
+    "MG",
+    "MU"
+  ],
+  "statistics": {
+    "population": {
+      "value": 122730,
+      "unit": "people",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Population, total",
+        "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SC",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "populationDensity": {
+      "value": 260.376086956522,
+      "unit": "people/km²",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Population density",
+        "url": "https://data.worldbank.org/indicator/EN.POP.DNST?locations=SC",
+        "date": "2023"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "area": {
+      "value": 460,
+      "unit": "km²",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Land area",
+        "url": "https://data.worldbank.org/indicator/AG.LND.TOTL.K2?locations=SC",
+        "date": "2023"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdp": {
+      "value": 2387022853.48583,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP (current US$)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=SC",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpPerCapita": {
+      "value": 19449.3836346926,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP per capita (current US$)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=SC",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpGrowth": {
+      "value": 5.79795669973812,
+      "unit": "%",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP growth (annual %)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=SC",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "gdpPpp": {
+      "value": 4400364876.26173,
+      "unit": "intl $",
+      "source": {
+        "org": "World Bank",
+        "dataset": "GDP, PPP (current international $)",
+        "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=SC",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "inflation": {
+      "value": 0.297589655467556,
+      "unit": "%",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Inflation, consumer prices (annual %)",
+        "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=SC",
+        "date": "2025"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "militaryExpenditure": {
+      "value": 26860869.6918082,
+      "unit": "USD",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Military expenditure (current US$)",
+        "url": "https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=SC",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "militaryExpenditurePctGdp": {
+      "value": 1.17906851761683,
+      "unit": "% of GDP",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Military expenditure (% of GDP)",
+        "url": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS?locations=SC",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "lifeExpectancy": {
+      "value": 76.2951219512195,
+      "unit": "years",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Life expectancy at birth",
+        "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=SC",
+        "date": "2024"
+      },
+      "retrievedAt": "2026-08-19"
+    },
+    "literacyRate": {
+      "value": 93.9499969482422,
+      "unit": "% of adults",
+      "source": {
+        "org": "World Bank",
+        "dataset": "Literacy rate, adult total",
+        "url": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=SC",
+        "date": "2010"
+      },
+      "retrievedAt": "2026-08-19"
+    }
+  },
+  "sources": [
+    {
+      "org": "Wikidata",
+      "dataset": "Wikidata item Q1042",
+      "url": "https://www.wikidata.org/wiki/Q1042",
+      "date": "2026-08-19"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Population, total",
+      "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=SC",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Population density",
+      "url": "https://data.worldbank.org/indicator/EN.POP.DNST?locations=SC",
+      "date": "2023"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Land area",
+      "url": "https://data.worldbank.org/indicator/AG.LND.TOTL.K2?locations=SC",
+      "date": "2023"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP (current US$)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=SC",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP per capita (current US$)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=SC",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP growth (annual %)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=SC",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "GDP, PPP (current international $)",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.PP.CD?locations=SC",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Inflation, consumer prices (annual %)",
+      "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=SC",
+      "date": "2025"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Military expenditure (current US$)",
+      "url": "https://data.worldbank.org/indicator/MS.MIL.XPND.CD?locations=SC",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Military expenditure (% of GDP)",
+      "url": "https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS?locations=SC",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Life expectancy at birth",
+      "url": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=SC",
+      "date": "2024"
+    },
+    {
+      "org": "World Bank",
+      "dataset": "Literacy rate, adult total",
+      "url": "https://data.worldbank.org/indicator/SE.ADT.LITR.ZS?locations=SC",
+      "date": "2010"
+    }
+  ]
+}

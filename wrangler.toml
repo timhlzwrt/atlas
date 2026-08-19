@@ -1,0 +1,16 @@
+name = "geopolitical-atlas"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-08-19"
+compatibility_flags = ["nodejs_compat"]
+
+# NEWS_CACHE holds cached GNews responses and a daily request-budget counter
+# (see functions/api/news/_shared.ts). The same namespace id is used for both
+# production and preview here since news data has no meaningful "environment"
+# distinction — swap in a second namespace if that ever changes.
+[[kv_namespaces]]
+binding = "NEWS_CACHE"
+id = "d9844db3e3714825b68fa1b42f1eeeac"
+
+# GNEWS_API_KEY is a secret, not a var — set via:
+#   npx wrangler pages secret put GNEWS_API_KEY
+# Never commit the actual key.

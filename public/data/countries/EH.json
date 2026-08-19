@@ -1,0 +1,37 @@
+{
+  "id": "EH",
+  "iso3": "ESH",
+  "name": "Western Sahara",
+  "officialName": "Sahrawi Arab Democratic Republic (proclaimed) / Western Sahara",
+  "region": "Africa",
+  "capital": "Laâyoune (Moroccan-administered) / Tifariti (SADR-administered)",
+  "flagEmoji": "🇪🇭",
+  "recognitionStatus": "disputed",
+  "hasDeepData": false,
+  "languages": [],
+  "neighbors": [
+    "MA",
+    "DZ",
+    "MR"
+  ],
+  "borders": [
+    "MA",
+    "DZ",
+    "MR"
+  ],
+  "statistics": {},
+  "sources": [
+    {
+      "org": "Wikidata",
+      "dataset": "Western Sahara (Q6250)",
+      "url": "https://www.wikidata.org/wiki/Q6250",
+      "date": "2026-08-19"
+    },
+    {
+      "org": "United Nations",
+      "dataset": "Non-Self-Governing Territories",
+      "url": "https://www.un.org/dppa/decolonization/en/nsgt",
+      "date": "2026-08-19"
+    }
+  ]
+}
