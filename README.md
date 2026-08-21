@@ -49,4 +49,4 @@ See [`docs/DATA_SOURCES.md`](docs/DATA_SOURCES.md) for what each source provides
 - [`docs/PRIVACY.md`](docs/PRIVACY.md) — what is and isn't collected
 - [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) — Cloudflare Pages setup, secrets, free-tier fit
 
-hi 
+hi ich bin nicht du
