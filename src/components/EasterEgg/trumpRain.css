@@ -1,0 +1,34 @@
+.trump-rain {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: var(--z-toast);
+}
+
+.trump-rain__drop {
+  position: absolute;
+  top: -10vh;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
+  animation-name: trump-rain-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes trump-rain-fall {
+  from {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--drift), 120vh) rotate(var(--spin));
+    opacity: 0;
+  }
+}
