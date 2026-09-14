@@ -80,7 +80,7 @@ export function CountryCard({ countryId, events, onSelectCountry }: CountryCardP
 
   return (
     <div className={`country-card ${expanded ? 'country-card--expanded' : ''}`}>
-      <header className="country-card__header">
+      <header className="country-card__header" data-drag-handle>
         <span className="country-card__flag" aria-hidden="true">
           {profile.flagEmoji}
         </span>

@@ -63,6 +63,16 @@
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
+  cursor: grab;
+  touch-action: none;
+}
+
+.country-card__header:active {
+  cursor: grabbing;
+}
+
+.country-card__header button {
+  cursor: pointer;
 }
 
 .country-card__flag {
