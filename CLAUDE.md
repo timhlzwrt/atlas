@@ -7,8 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 A 3D interactive globe (React + `react-globe.gl`/Three.js) for exploring countries, post-1945 history, and
 leadership records, deployed as a static SPA on Cloudflare Pages. Every fact is sourced (World Bank, Wikidata,
 Natural Earth) and nothing is fabricated — see `docs/DATA_SOURCES.md` for what's covered and its known gaps,
-`docs/ARCHITECTURE.md` for the stack rationale and request flow, `docs/DEPLOYMENT.md` for Cloudflare Pages
-setup/secrets/free-tier fit, and `docs/PRIVACY.md` for what is and isn't collected.
+
 
 ## Commands
 
