@@ -8,6 +8,17 @@
     <meta name="description" content="Geopolitical Atlas — an interactive 3D globe for exploring countries, statistics, and history." />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>Geopolitical Atlas</title>
+    <!--
+      The world geometry is the one large fetch every load needs regardless of
+      globe surface (country polygons render before any imagery texture is
+      picked). Preloading lets the browser start that transfer the instant it
+      sees this document, in parallel with downloading/parsing the JS bundle,
+      instead of waiting for React to mount and fire the effect that fetches
+      it. `crossorigin` is required for `as="fetch"` preloads even same-origin,
+      or the browser won't match the eventual fetch() to this preload.
+    -->
+    <link rel="preload" href="/data/geometry/world.json" as="fetch" crossorigin="anonymous" />
+    <link rel="preload" href="/data/countries/index.json" as="fetch" crossorigin="anonymous" />
   </head>
   <body>
     <div id="root"></div>
