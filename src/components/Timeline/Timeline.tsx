@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ATLAS_START_YEAR, useTimeStore } from '../../state/timeStore';
 import { fetchPoliticalHistory } from '../../lib/api';
-import type { GeoEvent, PoliticalHistory, Source } from '../../types/domain';
+import type { EventCategory, GeoEvent, PoliticalHistory, Source } from '../../types/domain';
 import './timeline.css';
 
 interface TimelineProps {
@@ -10,12 +10,41 @@ interface TimelineProps {
   selectedCountryName: string | null;
 }
 
+/** The four visual tones markers/popovers are painted in — reuses the app's existing semantic colors
+ *  (see tokens.css) rather than inventing a chart-specific palette. */
+type Tone = 'conflict' | 'positive' | 'accent' | 'warning' | 'neutral';
+
+/** Buckets every curated event category into one of the four tones, and gives it a display label
+ *  for the marker tooltip and popover kicker. Record<EventCategory, ...> so a newly added category
+ *  fails to compile here instead of silently rendering uncategorized. */
+const CATEGORY_META: Record<EventCategory, { label: string; tone: Tone }> = {
+  war: { label: 'War', tone: 'conflict' },
+  revolution: { label: 'Revolution', tone: 'conflict' },
+  'regime-change': { label: 'Regime change', tone: 'conflict' },
+  dissolution: { label: 'Dissolution', tone: 'conflict' },
+  independence: { label: 'Independence', tone: 'positive' },
+  formation: { label: 'Formation', tone: 'positive' },
+  treaty: { label: 'Treaty', tone: 'accent' },
+  diplomatic: { label: 'Diplomatic', tone: 'accent' },
+  organization: { label: 'Organization', tone: 'accent' },
+  political: { label: 'Political', tone: 'accent' },
+  economic: { label: 'Economic', tone: 'warning' },
+};
+
+const LEGEND: { tone: Tone; label: string }[] = [
+  { tone: 'conflict', label: 'Conflict & upheaval' },
+  { tone: 'positive', label: 'Founding' },
+  { tone: 'accent', label: 'Diplomacy & politics' },
+  { tone: 'warning', label: 'Economic' },
+];
+
 /** Everything the timeline can plot, whether it came from the curated events or the leadership record. */
 interface TimelineItem {
   id: string;
   kind: 'event' | 'term' | 'election';
   title: string;
   subtitle?: string;
+  tone: Tone;
   date: string;
   endDate?: string;
   description?: string;
@@ -26,6 +55,8 @@ interface TimelineItem {
 const MARKER_LANES = 3;
 /** Minimum horizontal separation (in % of track width) before markers get pushed to another lane. */
 const LANE_GAP = 1.6;
+/** Cap on marker entrance stagger so a country with a dense leadership record doesn't take forever to settle. */
+const MAX_STAGGER_MS = 180;
 
 export function Timeline({ events, selectedCountryId, selectedCountryName }: TimelineProps) {
   const mode = useTimeStore((s) => s.mode);
@@ -66,6 +97,8 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
       id: e.id,
       kind: 'event',
       title: e.title,
+      subtitle: CATEGORY_META[e.category].label,
+      tone: CATEGORY_META[e.category].tone,
       date: e.date,
       endDate: e.endDate,
       description: e.description,
@@ -84,6 +117,7 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
           kind: 'term',
           title: term.person,
           subtitle: term.office,
+          tone: term.role === 'head-of-government' ? 'positive' : 'neutral',
           date: term.start,
           endDate: term.end,
           description: [
@@ -102,6 +136,7 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
           kind: 'election',
           title: election.label,
           subtitle: 'Election',
+          tone: 'accent',
           date: election.date,
           importance: 2,
           sources: politics.sources,
@@ -144,8 +179,8 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
   return (
     <div className="timeline">
       {openItem && (
-        <div className="timeline__popover">
-          <button className="timeline__popover-close" onClick={() => setOpenItem(null)}>
+        <div className={`timeline__popover timeline__popover--tone-${openItem.tone}`}>
+          <button className="timeline__popover-close" onClick={() => setOpenItem(null)} aria-label="Close">
             ×
           </button>
           {openItem.subtitle && <p className="timeline__popover-kicker">{openItem.subtitle}</p>}
@@ -194,26 +229,37 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
         </div>
       </div>
 
+      <div className="timeline__legend" aria-hidden="true">
+        {LEGEND.map(({ tone, label }) => (
+          <span key={tone} className="timeline__legend-item">
+            <span className={`timeline__legend-dot timeline__marker--tone-${tone}`} />
+            {label}
+          </span>
+        ))}
+      </div>
+
       <div className="timeline__track">
         <div className="timeline__line" />
         {decades.map(({ year, pct }) => (
           <div key={year} className="timeline__tick" style={{ left: `${pct}%` }} aria-hidden="true" />
         ))}
-        {track.map(({ item, pct, lane }) => (
+        {track.map(({ item, pct, lane }, i) => (
           <button
             key={item.id}
-            className={`timeline__marker timeline__marker--${item.kind} timeline__marker--imp${item.importance} ${
+            className={`timeline__marker timeline__marker--${item.kind} timeline__marker--tone-${item.tone} timeline__marker--imp${item.importance} ${
               selectedEventId === item.id ? 'timeline__marker--active' : ''
             }`}
-            style={{ left: `${pct}%`, top: `${18 + lane * 13}px` }}
-            title={`${item.title} (${item.date.slice(0, 4)})`}
+            style={{ left: `${pct}%`, top: `${18 + lane * 14}px`, animationDelay: `${Math.min(i * 5, MAX_STAGGER_MS)}ms` }}
+            title={`${item.title} — ${item.subtitle ?? ''} (${item.date.slice(0, 4)})`}
             onClick={() => {
               selectEvent(item.id, item.date);
               setOpenItem(item);
             }}
           />
         ))}
-        <div className="timeline__now" style={{ left: '100%' }} title="Present day" />
+        <div className="timeline__now" title="Present day">
+          <span className="timeline__now-pulse" />
+        </div>
       </div>
       <div className="timeline__axis">
         <span>{ATLAS_START_YEAR}</span>
