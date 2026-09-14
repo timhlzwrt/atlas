@@ -83,8 +83,10 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
   const [size, setSize] = useState({ width: window.innerWidth, height: window.innerHeight });
   const sizeRef = useRef(size);
   // Last position the anchor was actually placed at (by tracking or by drag),
-  // so a new drag gesture starts from the card's true current position.
-  const lastPosRef = useRef({ x: 0, y: 0 });
+  // so a new drag gesture starts from the card's true current position. Null
+  // until tick() places it the first time — the resize-clamp effect below
+  // must not act on a made-up (0,0) before that's happened.
+  const lastPosRef = useRef<{ x: number; y: number } | null>(null);
   const draggingRef = useRef(false);
   const dragStartRef = useRef({ pointerX: 0, pointerY: 0, anchorX: 0, anchorY: 0 });
   // Once the user drags the card, it's "pinned": camera-based tracking stops
@@ -231,14 +233,16 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       const target = e.target as HTMLElement;
       if (target.closest('button, a, input, textarea, select')) return;
       if (!target.closest('[data-drag-handle]')) return;
+      const pos = lastPosRef.current;
+      if (!pos) return; // card isn't placed yet — nothing to grab
       e.preventDefault();
       draggingRef.current = true;
       pinnedRef.current = true;
       dragStartRef.current = {
         pointerX: e.clientX,
         pointerY: e.clientY,
-        anchorX: lastPosRef.current.x,
-        anchorY: lastPosRef.current.y,
+        anchorX: pos.x,
+        anchorY: pos.y,
       };
       document.body.style.userSelect = 'none';
       window.addEventListener('pointermove', handleDragPointerMove);
@@ -258,9 +262,11 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       const anchor = anchorRef.current;
       if (!anchor) return;
       const { width, height } = sizeRef.current;
+      const pos = lastPosRef.current;
+      if (!pos) return; // tick() hasn't placed the card yet — nothing to clamp
+      const { x, y } = pos;
       const cardHalfHeight = card.clientHeight / 2;
       const yMargin = Math.max(CARD_MARGIN, cardHalfHeight + EDGE_PADDING);
-      const { x, y } = lastPosRef.current;
       const clampedX = Math.min(Math.max(x, CARD_MARGIN), width - CARD_MARGIN);
       const clampedY = Math.min(Math.max(y, yMargin), height - yMargin);
       if (clampedX === x && clampedY === y) return;
