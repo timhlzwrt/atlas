@@ -25,6 +25,8 @@ interface GlobeProps {
   countryIndex: Map<string, CountryIndexEntry>;
   disputedIds: Set<string>;
   relationships: Relationship[];
+  /** Fired on an actual map click (not a programmatic/search selection), for click-triggered easter eggs. */
+  onCountryClick?: (id: string) => void;
   /** Rendered inside a screen-space anchor that follows the selected country every frame. */
   children?: ReactNode;
 }
@@ -71,7 +73,7 @@ function loadTexture(url: string, isColorMap: boolean): THREE.Texture {
 }
 
 const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
-  { geometry, countryIndex, disputedIds, relationships, children },
+  { geometry, countryIndex, disputedIds, relationships, onCountryClick, children },
   ref,
 ) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
@@ -317,8 +319,9 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       const f = feat as CountryFeature;
       selectCountry(f.properties.id);
       flyToCountry(f.properties.id, 1.3);
+      onCountryClick?.(f.properties.id);
     },
-    [selectCountry, flyToCountry],
+    [selectCountry, flyToCountry, onCountryClick],
   );
 
   const handlePolygonHover = useCallback(
