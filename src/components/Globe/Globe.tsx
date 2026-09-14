@@ -114,6 +114,18 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
     globeRef.current?.pointOfView(INITIAL_VIEW, 0);
   }, []);
 
+  // Backgrounded tabs still receive throttled rAF ticks in most browsers, so
+  // the render loop (and autoRotate's accumulated angle) keeps quietly
+  // burning CPU/battery and can "jump" on return. Stop it outright instead.
+  useEffect(() => {
+    const onVisibilityChange = () => {
+      if (document.hidden) globeRef.current?.pauseAnimation();
+      else globeRef.current?.resumeAnimation();
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', onVisibilityChange);
+  }, []);
+
   // Track the selected country's live screen position every frame (camera moves
   // continuously via drag/auto-rotate) and move the anchor imperatively — a
   // React state update on every tick would re-render the whole card at 60fps.
@@ -151,10 +163,13 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
   // Brightness tints the material colour, which multiplies the texture. The
   // material is cheap to rebuild per slider step only because the textures
   // themselves are cached across rebuilds.
+  // Lambert instead of Phong: the sphere is the single largest fragment count
+  // in the scene, and Phong's specular term (view-vector reflection per pixel)
+  // was buying an all-but-invisible highlight at this shininess — dropping it
+  // is a real per-frame GPU saving with no visible difference.
   const globeMaterial = useMemo(
     () =>
-      new THREE.MeshPhongMaterial({
-        shininess: 3,
+      new THREE.MeshLambertMaterial({
         color: new THREE.Color(style.base).multiplyScalar(brightness),
         map: style.texture ? loadTexture(style.texture, true) : null,
         bumpMap: style.bump ? loadTexture(style.bump, false) : null,
@@ -184,6 +199,14 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       return style.strokeDefault;
     },
     [selectedCountryId, hoveredCountryId, style],
+  );
+
+  // Memoized so hover/select re-renders (which don't affect this value) don't
+  // hand three-globe a new function identity and trigger a side-material pass
+  // across all ~200 polygons on every country the pointer crosses.
+  const sideColor = useCallback(
+    () => (style.texture ? 'rgba(10, 18, 34, 0.25)' : 'rgba(4, 8, 18, 0.6)'),
+    [style.texture],
   );
 
   const altitude = useCallback(
@@ -246,7 +269,7 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
         polygonsData={geometry?.features ?? []}
         polygonGeoJsonGeometry="geometry"
         polygonCapColor={capColor}
-        polygonSideColor={() => (style.texture ? 'rgba(10, 18, 34, 0.25)' : 'rgba(4, 8, 18, 0.6)')}
+        polygonSideColor={sideColor}
         polygonStrokeColor={strokeColor}
         polygonAltitude={altitude}
         polygonCapCurvatureResolution={POLYGON_CURVATURE_RESOLUTION}
