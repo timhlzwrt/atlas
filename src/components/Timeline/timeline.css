@@ -1,6 +1,9 @@
 .timeline {
   position: relative;
   padding: var(--space-3) var(--space-6) var(--space-4);
+  background: linear-gradient(to bottom, transparent, rgba(6, 9, 17, 0.55) 40%);
+  border-top: 1px solid var(--color-border);
+  backdrop-filter: blur(6px);
 }
 
 .timeline__header {
@@ -33,6 +36,10 @@
   padding: 4px 10px;
   border-radius: 999px;
   cursor: pointer;
+  transition: background var(--dur-fast), color var(--dur-fast);
+}
+.timeline__scope-toggle button:hover {
+  color: var(--color-text);
 }
 .timeline__scope-toggle button.active {
   background: var(--color-accent-dim);
@@ -47,6 +54,22 @@
   padding: 4px 10px;
   border-radius: 999px;
   cursor: pointer;
+  box-shadow: 0 0 0 0 var(--color-accent-glow);
+  animation: present-btn-pulse 2.4s var(--ease-in-out) infinite;
+}
+.timeline__present-btn:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+@keyframes present-btn-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--color-accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 0 5px transparent;
+  }
 }
 
 .timeline__header-right {
@@ -68,10 +91,42 @@
   margin: 0;
 }
 
+/* Category legend — decorative, reinforces the marker colors below rather than being the only channel
+   (every marker also carries its category/office in its title and popover kicker). */
+.timeline__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: 0 0 var(--space-2);
+}
+
+.timeline__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  color: var(--color-text-faint);
+}
+
+.timeline__legend-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+@media (max-width: 560px) {
+  .timeline__legend {
+    display: none;
+  }
+}
+
 /* Tall enough for the three marker lanes the layout can stack into. */
 .timeline__track {
   position: relative;
-  height: 56px;
+  height: 58px;
 }
 
 .timeline__line {
@@ -80,15 +135,21 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: var(--color-border);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-border-strong) 4%,
+    var(--color-border-strong) 96%,
+    transparent
+  );
 }
 
 .timeline__tick {
   position: absolute;
-  top: 12px;
+  top: 13px;
   width: 1px;
-  height: 7px;
-  background: var(--color-border);
+  height: 11px;
+  background: linear-gradient(to bottom, transparent, var(--color-border) 40%, var(--color-border));
 }
 
 .timeline__marker {
@@ -97,62 +158,112 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-text-faint);
+  background: currentColor;
+  color: var(--color-text-faint);
   border: none;
+  padding: 0;
   cursor: pointer;
   transform: translate(-50%, -50%);
-  transition: transform var(--dur-fast) var(--ease-out), background var(--dur-fast);
+  transition: transform var(--dur-fast) var(--ease-out), filter var(--dur-fast);
+  animation: marker-in var(--dur-med) var(--ease-out) both;
 }
+/* Bigger invisible hit area than the visible dot, without inflating the mark itself. */
+.timeline__marker::before {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: inherit;
+}
+.timeline__marker:hover {
+  transform: translate(-50%, -50%) scale(1.5);
+  filter: brightness(1.2);
+}
+
+@keyframes marker-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Tone = which color family a marker reads as (shared with the legend dots and popover accent). */
+.timeline__marker--tone-conflict {
+  color: var(--color-conflict);
+}
+.timeline__marker--tone-positive {
+  color: var(--color-positive);
+}
+.timeline__marker--tone-accent {
+  color: var(--color-accent);
+}
+.timeline__marker--tone-warning {
+  color: var(--color-warning);
+}
+.timeline__marker--tone-neutral {
+  color: var(--color-text-faint);
+}
+
+/* Importance = how strongly a marker reads (size + glow), independent of its tone. */
 .timeline__marker--imp2 {
   width: 8px;
   height: 8px;
-  background: var(--color-accent);
+  box-shadow: 0 0 6px currentColor;
 }
 .timeline__marker--imp3 {
-  width: 11px;
-  height: 11px;
-  background: var(--color-accent-bright);
-  box-shadow: 0 0 8px var(--color-accent-glow);
-}
-.timeline__marker:hover {
-  transform: translate(-50%, -50%) scale(1.4);
-}
-.timeline__marker--active {
-  background: var(--color-text);
-  box-shadow: 0 0 10px var(--color-accent-glow);
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 0 16px currentColor;
 }
 
-/* Leadership markers read as a different class of fact from world events. */
+/* Leadership markers read as a different class of fact from world events: squares for terms in
+   office, a ring for elections — shape carries "kind", color still carries tone. */
 .timeline__marker--term {
-  width: 5px;
-  height: 5px;
-  border-radius: 1px;
-  background: var(--color-text-faint);
-  box-shadow: none;
-}
-.timeline__marker--term.timeline__marker--imp2 {
-  width: 7px;
-  height: 7px;
-  background: var(--color-positive);
+  border-radius: 2px;
 }
 .timeline__marker--election {
-  width: 7px;
-  height: 7px;
-  border-radius: 1px;
   background: none;
-  border: 1px solid var(--color-warning);
-  box-shadow: none;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+}
+
+.timeline__marker--active {
+  color: var(--color-text);
+  box-shadow: 0 0 14px currentColor;
 }
 
 .timeline__now {
   position: absolute;
   top: 18px;
+  right: 0;
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--color-positive);
-  transform: translate(-100%, -50%);
+  transform: translate(0, -50%);
   box-shadow: 0 0 8px rgba(79, 209, 165, 0.6);
+}
+
+.timeline__now-pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-positive);
+  animation: now-pulse 2.2s var(--ease-out) infinite;
+}
+
+@keyframes now-pulse {
+  from {
+    opacity: 0.6;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.8);
+  }
 }
 
 .timeline__axis {
@@ -179,14 +290,39 @@
   position: absolute;
   bottom: calc(100% + 10px);
   left: 50%;
-  transform: translateX(-50%);
   width: min(420px, calc(100vw - 48px));
   background: var(--color-surface-solid);
   border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-border-strong);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
   padding: var(--space-4);
-  animation: card-in var(--dur-med) var(--ease-out);
+  transform: translateX(-50%);
+  animation: timeline-pop-in var(--dur-med) var(--ease-out);
+}
+
+@keyframes timeline-pop-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.timeline__popover--tone-conflict {
+  border-top-color: var(--color-conflict);
+}
+.timeline__popover--tone-positive {
+  border-top-color: var(--color-positive);
+}
+.timeline__popover--tone-accent {
+  border-top-color: var(--color-accent);
+}
+.timeline__popover--tone-warning {
+  border-top-color: var(--color-warning);
 }
 
 .timeline__popover-kicker {
@@ -221,6 +357,9 @@
   gap: var(--space-3);
   font-size: 11px;
 }
+.timeline__popover-sources a {
+  color: var(--color-accent-bright);
+}
 
 .timeline__popover-close {
   position: absolute;
@@ -230,5 +369,9 @@
   border: none;
   color: var(--color-text-muted);
   font-size: 18px;
+  line-height: 1;
   cursor: pointer;
+}
+.timeline__popover-close:hover {
+  color: var(--color-text);
 }

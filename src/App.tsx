@@ -7,6 +7,7 @@ import { Timeline } from './components/Timeline/Timeline';
 import { Compare } from './components/Compare/Compare';
 import { SourcesPanel } from './components/Sources/SourcesPanel';
 import { NewsList } from './components/News/NewsList';
+import { TrumpRain } from './components/EasterEgg/TrumpRain';
 import { useSelectionStore } from './state/selectionStore';
 import { useTimeStore } from './state/timeStore';
 import { fetchCountryIndex, fetchEvents, fetchRelationships, fetchWorldGeometry, type CountryIndexEntry } from './lib/api';
@@ -25,6 +26,9 @@ export default function App() {
   const [relationships, setRelationships] = useState<Relationship[]>([]);
   const [sourcesOpen, setSourcesOpen] = useState(false);
   const [globalNewsOpen, setGlobalNewsOpen] = useState(false);
+  // Easter egg: clicking the USA on the globe rains a caricature down the screen.
+  // The counter (not a boolean) is used as a key so re-clicking mid-rain restarts it cleanly.
+  const [rainKey, setRainKey] = useState<number | null>(null);
 
   const globeRef = useRef<GlobeHandle>(null);
   const selectedCountryId = useSelectionStore((s) => s.selectedCountryId);
@@ -49,6 +53,10 @@ export default function App() {
   const goTo = (id: string) => {
     selectCountry(id);
     globeRef.current?.flyToCountry(id);
+  };
+
+  const handleCountryClick = (id: string) => {
+    if (id === 'US') setRainKey((k) => (k ?? 0) + 1);
   };
 
   const loading = countryIndex.length === 0 || !geometry;
@@ -90,7 +98,14 @@ export default function App() {
               </div>
             }
           >
-            <Globe geometry={geometry} countryIndex={countryMap} disputedIds={disputedIds} relationships={relationships} ref={globeRef}>
+            <Globe
+              geometry={geometry}
+              countryIndex={countryMap}
+              disputedIds={disputedIds}
+              relationships={relationships}
+              onCountryClick={handleCountryClick}
+              ref={globeRef}
+            >
               {selectedCountryId && <CountryCard countryId={selectedCountryId} events={events} onSelectCountry={goTo} />}
             </Globe>
           </Suspense>
@@ -117,6 +132,7 @@ export default function App() {
 
       <Compare countries={countryIndex} />
       {sourcesOpen && <SourcesPanel onClose={() => setSourcesOpen(false)} />}
+      {rainKey !== null && <TrumpRain key={rainKey} onDone={() => setRainKey(null)} />}
     </div>
   );
 }

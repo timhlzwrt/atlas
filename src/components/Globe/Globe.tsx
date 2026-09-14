@@ -1,4 +1,14 @@
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState, type ReactNode } from 'react';
+import {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+  type PointerEvent as ReactPointerEvent,
+  type ReactNode,
+} from 'react';
 import GlobeGL, { type GlobeMethods } from 'react-globe.gl';
 import * as THREE from 'three';
 import { useSelectionStore } from '../../state/selectionStore';
@@ -15,6 +25,8 @@ interface GlobeProps {
   countryIndex: Map<string, CountryIndexEntry>;
   disputedIds: Set<string>;
   relationships: Relationship[];
+  /** Fired on an actual map click (not a programmatic/search selection), for click-triggered easter eggs. */
+  onCountryClick?: (id: string) => void;
   /** Rendered inside a screen-space anchor that follows the selected country every frame. */
   children?: ReactNode;
 }
@@ -61,7 +73,7 @@ function loadTexture(url: string, isColorMap: boolean): THREE.Texture {
 }
 
 const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
-  { geometry, countryIndex, disputedIds, relationships, children },
+  { geometry, countryIndex, disputedIds, relationships, onCountryClick, children },
   ref,
 ) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
@@ -69,6 +81,19 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
   const anchorRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
   const [size, setSize] = useState({ width: window.innerWidth, height: window.innerHeight });
+  const sizeRef = useRef(size);
+  // Last position the anchor was actually placed at (by tracking or by drag),
+  // so a new drag gesture starts from the card's true current position.
+  const lastPosRef = useRef({ x: 0, y: 0 });
+  const draggingRef = useRef(false);
+  const dragStartRef = useRef({ pointerX: 0, pointerY: 0, anchorX: 0, anchorY: 0 });
+  // Once the user drags the card, it's "pinned": camera-based tracking stops
+  // touching it until a different country is selected.
+  const pinnedRef = useRef(false);
+
+  useEffect(() => {
+    sizeRef.current = size;
+  }, [size]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -86,6 +111,10 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
   const setHovered = useSelectionStore((s) => s.setHovered);
   const selectCountry = useSelectionStore((s) => s.selectCountry);
   const activeLayers = useLayersStore((s) => s.active);
+
+  useEffect(() => {
+    pinnedRef.current = false;
+  }, [selectedCountryId]);
 
   const flyToCountry = useCallback(
     (id: string, altitude = 1.5) => {
@@ -114,23 +143,17 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
     globeRef.current?.pointOfView(INITIAL_VIEW, 0);
   }, []);
 
-  // Backgrounded tabs still receive throttled rAF ticks in most browsers, so
-  // the render loop (and autoRotate's accumulated angle) keeps quietly
-  // burning CPU/battery and can "jump" on return. Stop it outright instead.
+  // Track the selected country's live screen position every frame while the
+  // camera flies to it (see flyToCountry's 1000ms animation), then freeze the
+  // anchor in place — otherwise orbiting the globe afterward would drag the
+  // card along with it. Dragging the card by hand (below) pins it immediately,
+  // taking it out of this loop until a different country is selected. A React
+  // state update on every tick would re-render the whole card at 60fps, so
+  // this moves the anchor imperatively instead.
   useEffect(() => {
-    const onVisibilityChange = () => {
-      if (document.hidden) globeRef.current?.pauseAnimation();
-      else globeRef.current?.resumeAnimation();
-    };
-    document.addEventListener('visibilitychange', onVisibilityChange);
-    return () => document.removeEventListener('visibilitychange', onVisibilityChange);
-  }, []);
-
-  // Track the selected country's live screen position every frame (camera moves
-  // continuously via drag/auto-rotate) and move the anchor imperatively — a
-  // React state update on every tick would re-render the whole card at 60fps.
-  useEffect(() => {
+    let frozen = false;
     const tick = () => {
+      if (frozen || pinnedRef.current) return;
       rafRef.current = requestAnimationFrame(tick);
       const anchor = anchorRef.current;
       if (!selectedCountryId || !globeRef.current || !anchor) {
@@ -151,10 +174,100 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       anchor.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
       anchor.style.opacity = '1';
       anchor.dataset.side = clampedX > size.width / 2 ? 'left' : 'right';
+      lastPosRef.current = { x: clampedX, y: clampedY };
     };
     rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
+    const settle = setTimeout(() => {
+      frozen = true;
+      cancelAnimationFrame(rafRef.current);
+    }, 1000);
+    return () => {
+      frozen = true;
+      clearTimeout(settle);
+      cancelAnimationFrame(rafRef.current);
+    };
   }, [selectedCountryId, countryIndex, size]);
+
+  // Click-and-drag repositioning: press anywhere marked [data-drag-handle]
+  // (the card header) to pick the card up and move it freely on screen.
+  const handleDragPointerMove = useCallback((e: PointerEvent) => {
+    if (!draggingRef.current) return;
+    const anchor = anchorRef.current;
+    if (!anchor) return;
+    const { pointerX, pointerY, anchorX, anchorY } = dragStartRef.current;
+    const { width, height } = sizeRef.current;
+    const cardHalfHeight = (anchor.firstElementChild?.clientHeight ?? 0) / 2;
+    const yMargin = Math.max(CARD_MARGIN, cardHalfHeight + EDGE_PADDING);
+    const nextX = anchorX + (e.clientX - pointerX);
+    const nextY = anchorY + (e.clientY - pointerY);
+    const clampedX = Math.min(Math.max(nextX, CARD_MARGIN), width - CARD_MARGIN);
+    const clampedY = Math.min(Math.max(nextY, yMargin), height - yMargin);
+    anchor.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
+    anchor.dataset.side = clampedX > width / 2 ? 'left' : 'right';
+    lastPosRef.current = { x: clampedX, y: clampedY };
+  }, []);
+
+  const handleDragPointerUp = useCallback(() => {
+    draggingRef.current = false;
+    document.body.style.userSelect = '';
+    window.removeEventListener('pointermove', handleDragPointerMove);
+    window.removeEventListener('pointerup', handleDragPointerUp);
+  }, [handleDragPointerMove]);
+
+  const handleDragPointerDown = useCallback(
+    (e: ReactPointerEvent<HTMLDivElement>) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('button, a, input, textarea, select')) return;
+      if (!target.closest('[data-drag-handle]')) return;
+      e.preventDefault();
+      draggingRef.current = true;
+      pinnedRef.current = true;
+      dragStartRef.current = {
+        pointerX: e.clientX,
+        pointerY: e.clientY,
+        anchorX: lastPosRef.current.x,
+        anchorY: lastPosRef.current.y,
+      };
+      document.body.style.userSelect = 'none';
+      window.addEventListener('pointermove', handleDragPointerMove);
+      window.addEventListener('pointerup', handleDragPointerUp);
+    },
+    [handleDragPointerMove, handleDragPointerUp],
+  );
+
+  // The card's own height can change independently of any drag or camera
+  // move — expanding it, or its data finishing a fetch. Re-clamp whenever
+  // that happens, or a card left near an edge (dragged or tracked there)
+  // can grow past the viewport with no way to reach its header/close button.
+  useEffect(() => {
+    const card = anchorRef.current?.firstElementChild as HTMLElement | null;
+    if (!card) return;
+    const clampToViewport = () => {
+      const anchor = anchorRef.current;
+      if (!anchor) return;
+      const { width, height } = sizeRef.current;
+      const cardHalfHeight = card.clientHeight / 2;
+      const yMargin = Math.max(CARD_MARGIN, cardHalfHeight + EDGE_PADDING);
+      const { x, y } = lastPosRef.current;
+      const clampedX = Math.min(Math.max(x, CARD_MARGIN), width - CARD_MARGIN);
+      const clampedY = Math.min(Math.max(y, yMargin), height - yMargin);
+      if (clampedX === x && clampedY === y) return;
+      anchor.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
+      lastPosRef.current = { x: clampedX, y: clampedY };
+    };
+    const observer = new ResizeObserver(clampToViewport);
+    observer.observe(card);
+    return () => observer.disconnect();
+  }, [selectedCountryId]);
+
+  useEffect(
+    () => () => {
+      window.removeEventListener('pointermove', handleDragPointerMove);
+      window.removeEventListener('pointerup', handleDragPointerUp);
+      document.body.style.userSelect = '';
+    },
+    [handleDragPointerMove, handleDragPointerUp],
+  );
 
   const surface = useGlobeStore((s) => s.surface);
   const brightness = useGlobeStore((s) => s.brightness);
@@ -242,8 +355,9 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       const f = feat as CountryFeature;
       selectCountry(f.properties.id);
       flyToCountry(f.properties.id, 1.3);
+      onCountryClick?.(f.properties.id);
     },
-    [selectCountry, flyToCountry],
+    [selectCountry, flyToCountry, onCountryClick],
   );
 
   const handlePolygonHover = useCallback(
@@ -284,7 +398,7 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
         arcDashGap={0.25}
         arcDashAnimateTime={2600}
       />
-      <div className="card-anchor" ref={anchorRef} data-side="right">
+      <div className="card-anchor" ref={anchorRef} data-side="right" onPointerDown={handleDragPointerDown}>
         {children}
       </div>
     </div>
