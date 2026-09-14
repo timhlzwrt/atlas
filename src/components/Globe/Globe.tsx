@@ -235,6 +235,31 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
     [handleDragPointerMove, handleDragPointerUp],
   );
 
+  // The card's own height can change independently of any drag or camera
+  // move — expanding it, or its data finishing a fetch. Re-clamp whenever
+  // that happens, or a card left near an edge (dragged or tracked there)
+  // can grow past the viewport with no way to reach its header/close button.
+  useEffect(() => {
+    const card = anchorRef.current?.firstElementChild as HTMLElement | null;
+    if (!card) return;
+    const clampToViewport = () => {
+      const anchor = anchorRef.current;
+      if (!anchor) return;
+      const { width, height } = sizeRef.current;
+      const cardHalfHeight = card.clientHeight / 2;
+      const yMargin = Math.max(CARD_MARGIN, cardHalfHeight + EDGE_PADDING);
+      const { x, y } = lastPosRef.current;
+      const clampedX = Math.min(Math.max(x, CARD_MARGIN), width - CARD_MARGIN);
+      const clampedY = Math.min(Math.max(y, yMargin), height - yMargin);
+      if (clampedX === x && clampedY === y) return;
+      anchor.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
+      lastPosRef.current = { x: clampedX, y: clampedY };
+    };
+    const observer = new ResizeObserver(clampToViewport);
+    observer.observe(card);
+    return () => observer.disconnect();
+  }, [selectedCountryId]);
+
   useEffect(
     () => () => {
       window.removeEventListener('pointermove', handleDragPointerMove);
