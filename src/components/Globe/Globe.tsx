@@ -98,11 +98,15 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
     globeRef.current?.pointOfView(INITIAL_VIEW, 0);
   }, []);
 
-  // Track the selected country's live screen position every frame (camera moves
-  // continuously via drag/auto-rotate) and move the anchor imperatively — a
-  // React state update on every tick would re-render the whole card at 60fps.
+  // Track the selected country's live screen position every frame while the
+  // camera flies to it (see flyToCountry's 1000ms animation), then freeze the
+  // anchor in place — otherwise dragging/orbiting the globe afterward would
+  // drag the card along with it. A React state update on every tick would
+  // re-render the whole card at 60fps, so this moves the anchor imperatively.
   useEffect(() => {
+    let frozen = false;
     const tick = () => {
+      if (frozen) return;
       rafRef.current = requestAnimationFrame(tick);
       const anchor = anchorRef.current;
       if (!selectedCountryId || !globeRef.current || !anchor) {
@@ -125,7 +129,15 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       anchor.dataset.side = clampedX > size.width / 2 ? 'left' : 'right';
     };
     rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
+    const settle = setTimeout(() => {
+      frozen = true;
+      cancelAnimationFrame(rafRef.current);
+    }, 1000);
+    return () => {
+      frozen = true;
+      clearTimeout(settle);
+      cancelAnimationFrame(rafRef.current);
+    };
   }, [selectedCountryId, countryIndex, size]);
 
   const surface = useGlobeStore((s) => s.surface);
