@@ -16,6 +16,15 @@
   animation-fill-mode: forwards;
 }
 
+.trump-rain__drop img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
 @keyframes trump-rain-fall {
   from {
     transform: translate(0, 0) rotate(0deg);
