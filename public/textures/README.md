@@ -12,3 +12,7 @@ Equirectangular Earth imagery used by the globe surface switcher
 All three are NASA imagery in the public domain, vendored here from the
 [`three-globe`](https://github.com/vasturiano/three-globe) example assets. They are served from this origin
 rather than a CDN because the site's Content-Security-Policy is `img-src 'self' data:`.
+
+Downscaled from the original 4096×2048 (bump map 2048×1024) to 2048×1024 (bump map 1024×512): at the
+on-screen size the globe actually renders at, the extra resolution was invisible but quadrupled GPU texture
+memory and decode cost, which mattered most on lower-end/mobile GPUs.
