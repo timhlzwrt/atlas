@@ -97,6 +97,11 @@ export function qidFromUri(uri: string | undefined): string | undefined {
 export async function writePublicData(relPath: string, data: unknown) {
   const outPath = path.resolve(import.meta.dirname, '../../public/data', relPath);
   await mkdir(path.dirname(outPath), { recursive: true });
-  await writeFile(outPath, JSON.stringify(data, null, 2), 'utf-8');
+  // Minified: this is fetched by the browser, not hand-edited, and review of
+  // its content happens on the curated/fetched TS source that generates it,
+  // not on this JSON diff — matches build-politics.ts, which already ships
+  // its per-country output this way. On geometry/world.json alone this is a
+  // ~2.6x size cut before gzip even runs.
+  await writeFile(outPath, JSON.stringify(data), 'utf-8');
   console.log(`wrote public/data/${relPath}`);
 }

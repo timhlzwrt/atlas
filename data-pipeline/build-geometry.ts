@@ -9,7 +9,8 @@
  * pseudo-codes this app uses consistently elsewhere (XK, XS).
  */
 import { geoCentroid } from 'd3-geo';
-// 50m is a deliberate choice: the converted GeoJSON gzips to ~1.4MB vs. ~7MB
+// 50m is a deliberate choice: the converted (minified, coordinate-rounded —
+// see roundCoordinates below) GeoJSON gzips to ~0.6MB vs. several times that
 // for 10m (TopoJSON's arc-sharing, which keeps the *source* files small, is
 // lost once countries are split into standalone GeoJSON features), and at
 // globe scale the extra 10m coastline detail is invisible. The one real
@@ -39,6 +40,23 @@ export interface GeometryBuildResult {
   unmatchedNumericIds: string[];
 }
 
+// world-atlas' topojson->geojson conversion leaves ~14 significant digits per
+// coordinate (arc delta-decoding artifacts), none of it real: the source is
+// 50m-resolution (~0.00045°) to begin with, and this is a rotating UI globe,
+// not a survey tool. Rounding to 1e-4° (~11m at the equator) is still finer
+// than the source data and cuts the shipped geometry from ~9.1MB to ~1.7MB
+// (gzipped: ~1.56MB to ~0.6MB) with no visible or measurable effect on shape.
+const COORDINATE_PRECISION = 4;
+
+function roundCoordinates<T>(coords: T): T {
+  if (!Array.isArray(coords)) return coords;
+  if (typeof coords[0] === 'number') {
+    const factor = 10 ** COORDINATE_PRECISION;
+    return (coords as number[]).map((n) => Math.round(n * factor) / factor) as unknown as T;
+  }
+  return (coords as unknown[]).map((c) => roundCoordinates(c)) as unknown as T;
+}
+
 export function buildGeometry(isoNumToIso2: Map<string, string>): GeometryBuildResult {
   const geo = topojsonClient.feature(worldTopo, 'countries') as unknown as GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
@@ -57,9 +75,15 @@ export function buildGeometry(isoNumToIso2: Map<string, string>): GeometryBuildR
       if (numericId) unmatchedNumericIds.push(`${numericId} (${name})`);
       continue;
     }
-    features.push({ ...f, properties: { id: iso2, name } });
+    // Centroid off the full-precision geometry, before rounding is applied to the shipped copy.
     const c = geoCentroid(f as GeoJSON.Feature);
     if (Number.isFinite(c[0]) && Number.isFinite(c[1])) centroids[iso2] = [c[0], c[1]];
+    const geom = f.geometry as GeoJSON.Polygon | GeoJSON.MultiPolygon;
+    features.push({
+      ...f,
+      properties: { id: iso2, name },
+      geometry: { type: geom.type, coordinates: roundCoordinates(geom.coordinates) } as GeoJSON.Geometry,
+    });
   }
 
   return {
