@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 A 3D interactive globe (React + `react-globe.gl`/Three.js) for exploring countries, post-1945 history, and
 leadership records, deployed as a static SPA on Cloudflare Pages. Every fact is sourced (World Bank, Wikidata,
 Natural Earth) and nothing is fabricated — see `docs/DATA_SOURCES.md` for what's covered and its known gaps,
-and `docs/ARCHITECTURE.md` for the stack rationale and request flow.
+
 
 ## Commands
 
@@ -78,6 +78,10 @@ has no Wikidata leadership coverage) is treated as a normal `null` result, not a
 different `lib`/`types` (e.g. pipeline code uses Node types and has no DOM lib; functions code uses
 `@cloudflare/workers-types`). `npm run build` only type-checks `app`+`node`; run `typecheck:pipeline` /
 `typecheck:functions` explicitly when touching those trees.
+
+**Strict CSP.** `public/_headers` sets `default-src 'self'` with no third-party script/style/connect/font
+origins at all. Adding any external resource (a CDN script, a web font, a new fetch target) requires updating
+that file too, or it will be silently blocked in production while working fine under `vite dev`.
 
 ## Working with sourced data
 
