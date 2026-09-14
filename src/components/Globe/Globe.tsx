@@ -143,6 +143,18 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
     globeRef.current?.pointOfView(INITIAL_VIEW, 0);
   }, []);
 
+  // Backgrounded tabs still receive throttled rAF ticks in most browsers, so
+  // the render loop (and autoRotate's accumulated angle) keeps quietly
+  // burning CPU/battery and can "jump" on return. Stop it outright instead.
+  useEffect(() => {
+    const onVisibilityChange = () => {
+      if (document.hidden) globeRef.current?.pauseAnimation();
+      else globeRef.current?.resumeAnimation();
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    return () => document.removeEventListener('visibilitychange', onVisibilityChange);
+  }, []);
+
   // Track the selected country's live screen position every frame while the
   // camera flies to it (see flyToCountry's 1000ms animation), then freeze the
   // anchor in place — otherwise orbiting the globe afterward would drag the
