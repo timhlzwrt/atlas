@@ -28,6 +28,22 @@ export interface GlobeHandle {
 
 const INITIAL_VIEW = { lat: 20, lng: 10, altitude: 2.4 };
 
+// three-render-objects already clamps devicePixelRatio to 2, so at that DPR the
+// canvas is already supersampled and MSAA is redundant cost on top of it — most
+// visible as GPU-bound frame drops on mobile. Skip it there; keep it at DPR 1
+// (most desktop monitors) where jagged polygon edges would otherwise show.
+// high-performance nudges laptops with switchable graphics off the integrated
+// GPU, which is otherwise a common source of stutter during rotation/drag.
+const RENDERER_CONFIG = {
+  antialias: (window.devicePixelRatio || 1) < 2,
+  powerPreference: 'high-performance' as const,
+};
+
+// Default 5° cap/side curvature is tuned for close-up zoom; this globe never
+// zooms in past country level, so a coarser tessellation is visually
+// identical here but meaningfully cuts triangle count across ~200 polygons.
+const POLYGON_CURVATURE_RESOLUTION = 10;
+
 /**
  * Globe textures are multi-megabyte and their URLs are a fixed set, so decode
  * them once for the lifetime of the page instead of per material rebuild.
@@ -221,6 +237,7 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
         width={size.width}
         height={size.height}
         backgroundColor={GLOBE_THEME.backgroundColor}
+        rendererConfig={RENDERER_CONFIG}
         globeMaterial={globeMaterial}
         showAtmosphere
         atmosphereColor={style.atmosphere}
@@ -232,6 +249,7 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
         polygonSideColor={() => (style.texture ? 'rgba(10, 18, 34, 0.25)' : 'rgba(4, 8, 18, 0.6)')}
         polygonStrokeColor={strokeColor}
         polygonAltitude={altitude}
+        polygonCapCurvatureResolution={POLYGON_CURVATURE_RESOLUTION}
         polygonsTransitionDuration={220}
         onPolygonClick={handlePolygonClick}
         onPolygonHover={handlePolygonHover}
