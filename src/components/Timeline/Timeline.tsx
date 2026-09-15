@@ -131,7 +131,10 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
             .filter(Boolean)
             .join(' '),
           importance: term.role === 'head-of-government' ? 2 : 1,
-          sources: [term.source],
+          // Falls back to the country's aggregate source list on data
+          // generated before per-term sourcing existed (source is optional
+          // until `npm run data:politics` backfills it everywhere).
+          sources: term.source ? [term.source] : politics.sources,
         });
       }
       for (const election of politics.elections) {
@@ -143,7 +146,7 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
           tone: 'accent',
           date: election.date,
           importance: 2,
-          sources: [election.source],
+          sources: election.source ? [election.source] : politics.sources,
         });
       }
     }
