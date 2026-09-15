@@ -112,16 +112,22 @@ export interface LeadershipTerm {
   party?: string;
   /** Elections this term was won at — a re-elected leader has more than one. */
   elections: PoliticalElection[];
-  /** This officeholder's own Wikidata item, not whoever is currently in office. */
-  source: Source;
+  /**
+   * This officeholder's own Wikidata item, not whoever is currently in
+   * office. Optional because it's absent in any public/data/politics/*.json
+   * generated before this field existed - `npm run data:politics` backfills
+   * it. Code reading this must fall back to PoliticalHistory.sources rather
+   * than assuming it's always present.
+   */
+  source?: Source;
 }
 
 export interface PoliticalElection {
   id: string;
   label: string;
   date: string; // ISO date
-  /** This election's own Wikidata item. */
-  source: Source;
+  /** This election's own Wikidata item. See LeadershipTerm.source for why this is optional. */
+  source?: Source;
 }
 
 /**
