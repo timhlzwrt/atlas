@@ -44,13 +44,23 @@ export function CountryCard({ countryId, events, onSelectCountry }: CountryCardP
     setProfile(null);
     setPolitics(null);
     setError(false);
-    fetchCountry(countryId)
-      .then(setProfile)
-      .catch(() => setError(true));
     let active = true;
-    fetchPoliticalHistory(countryId).then((history) => {
-      if (active) setPolitics(history);
-    });
+    fetchCountry(countryId)
+      .then((p) => {
+        if (active) setProfile(p);
+      })
+      .catch(() => {
+        if (active) setError(true);
+      });
+    fetchPoliticalHistory(countryId)
+      .then((history) => {
+        if (active) setPolitics(history);
+      })
+      .catch(() => {
+        // A non-404 failure (network error, etc.) just leaves the
+        // leadership section empty; fetchCountry's own error state already
+        // covers the "something's wrong with this country" case.
+      });
     return () => {
       active = false;
     };

@@ -17,6 +17,6 @@ async function handle(rawCode: string, env: Env) {
     return jsonResponse({ error: 'Unknown country code' }, { status: 404 });
   }
 
-  const news = await getCachedNews(env, `news:country:${code}`, COUNTRY_TTL, () => fetchCountryHeadlines(env, name));
+  const news = await getCachedNews(env, `news:country:${code}`, COUNTRY_TTL, 'country', () => fetchCountryHeadlines(env, name));
   return jsonResponse(news);
 }

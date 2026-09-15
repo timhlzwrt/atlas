@@ -29,14 +29,46 @@ export function Compare({ countries }: CompareProps) {
 
   const [profileA, setProfileA] = useState<CountryProfile | null>(null);
   const [profileB, setProfileB] = useState<CountryProfile | null>(null);
+  const [errorA, setErrorA] = useState(false);
+  const [errorB, setErrorB] = useState(false);
 
   useEffect(() => {
-    if (idA) fetchCountry(idA).then(setProfileA);
-    else setProfileA(null);
+    if (!idA) {
+      setProfileA(null);
+      setErrorA(false);
+      return;
+    }
+    let active = true;
+    setErrorA(false);
+    fetchCountry(idA)
+      .then((p) => {
+        if (active) setProfileA(p);
+      })
+      .catch(() => {
+        if (active) setErrorA(true);
+      });
+    return () => {
+      active = false;
+    };
   }, [idA]);
   useEffect(() => {
-    if (idB) fetchCountry(idB).then(setProfileB);
-    else setProfileB(null);
+    if (!idB) {
+      setProfileB(null);
+      setErrorB(false);
+      return;
+    }
+    let active = true;
+    setErrorB(false);
+    fetchCountry(idB)
+      .then((p) => {
+        if (active) setProfileB(p);
+      })
+      .catch(() => {
+        if (active) setErrorB(true);
+      });
+    return () => {
+      active = false;
+    };
   }, [idB]);
 
   if (!open) return null;
@@ -81,6 +113,8 @@ export function Compare({ countries }: CompareProps) {
               })}
             </tbody>
           </table>
+        ) : errorA || errorB ? (
+          <p className="section-hint">Couldn't load one of these countries. Try picking again.</p>
         ) : (
           <p className="section-hint">Pick two countries to compare.</p>
         )}

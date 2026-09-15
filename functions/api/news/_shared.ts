@@ -7,11 +7,19 @@ export interface Env {
 
 const GNEWS_BASE = 'https://gnews.io/api/v4';
 
-// Conservative daily budget under GNews's 100 req/day free-tier cap, split so
-// a handful of popular countries can't starve the global feed (or vice versa).
+// Conservative daily budget under GNews's 100 req/day free-tier cap, split
+// into two independent pools so a burst of country requests can't exhaust
+// the global feed's budget (or vice versa). Workers KV has no atomic
+// increment or compare-and-swap, so withinBudget's read-then-write below is
+// a known TOCTOU race: two concurrent requests near a pool's cap can both
+// read the same under-budget count and both proceed. The two pools together
+// (70 + 20 = 90) stay comfortably under the real 100/day cap to absorb
+// that, rather than trying to eliminate the race outright, which would need
+// a Durable Object rather than KV.
 const GLOBAL_CACHE_TTL_SECONDS = 2 * 60 * 60; // refetch at most every 2h
 const COUNTRY_CACHE_TTL_SECONDS = 6 * 60 * 60; // refetch at most every 6h
-const DAILY_BUDGET = 90;
+type BudgetScope = 'global' | 'country';
+const DAILY_BUDGETS: Record<BudgetScope, number> = { global: 20, country: 70 };
 
 interface GNewsArticle {
   title?: string;
@@ -23,14 +31,20 @@ interface GNewsResponse {
   articles?: GNewsArticle[];
 }
 
-function todayKey(): string {
-  return `budget:${new Date().toISOString().slice(0, 10)}`;
+function todayKey(scope: BudgetScope): string {
+  return `budget:${scope}:${new Date().toISOString().slice(0, 10)}`;
 }
 
-async function withinBudget(kv: KVNamespace): Promise<boolean> {
-  const key = todayKey();
-  const current = Number((await kv.get(key)) ?? '0');
-  if (current >= DAILY_BUDGET) return false;
+async function withinBudget(kv: KVNamespace, scope: BudgetScope): Promise<boolean> {
+  const dailyBudget = DAILY_BUDGETS[scope];
+  const key = todayKey(scope);
+  const raw = Number((await kv.get(key)) ?? '0');
+  // A corrupted/non-numeric stored value must not silently disable the cap:
+  // fail closed (treat as already at budget) rather than let `NaN >=
+  // dailyBudget` stay false forever and pass every request through
+  // unmetered - and re-persist "NaN" - for the rest of the day.
+  const current = Number.isFinite(raw) ? raw : dailyBudget;
+  if (current >= dailyBudget) return false;
   await kv.put(key, String(current + 1), { expirationTtl: 26 * 60 * 60 });
   return true;
 }
@@ -67,6 +81,7 @@ export async function getCachedNews(
   env: Env,
   cacheKey: string,
   ttlSeconds: number,
+  scope: BudgetScope,
   fetchFresh: () => Promise<NewsArticle[]>,
 ): Promise<NewsResponse> {
   const cached = await env.NEWS_CACHE.get<{ articles: NewsArticle[]; fetchedAt: string }>(cacheKey, 'json');
@@ -78,7 +93,7 @@ export async function getCachedNews(
     }
   }
 
-  const hasBudget = await withinBudget(env.NEWS_CACHE);
+  const hasBudget = await withinBudget(env.NEWS_CACHE, scope);
   if (!hasBudget) {
     if (cached) return { articles: cached.articles, fetchedAt: cached.fetchedAt, stale: true };
     return { articles: [], fetchedAt: new Date().toISOString(), stale: true };

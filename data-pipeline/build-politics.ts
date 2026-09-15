@@ -55,7 +55,7 @@ async function main() {
 
   const electionsByQid = new Map<string, PoliticalElection>();
   for (const e of elections) {
-    electionsByQid.set(e.qid, { id: e.qid, label: e.label, date: e.date.slice(0, 10) });
+    electionsByQid.set(e.qid, { id: e.qid, label: e.label, date: e.date.slice(0, 10), source: wikidataSource(e.qid) });
   }
 
   const partiesByPerson = new Map<string, PartyMembership[]>();
@@ -83,6 +83,7 @@ async function main() {
       end: isoDate(term.end),
       party: partyForTerm(term, partiesByPerson.get(term.personQid) ?? []),
       elections: termElections,
+      source: wikidataSource(term.personQid),
     };
 
     const list = byCountry.get(term.iso2) ?? [];
@@ -105,11 +106,19 @@ async function main() {
       }
     }
 
+    // One Source per unique person/election actually referenced by this
+    // country's record, not just the most recent officeholder's - a term
+    // from decades ago cites its own Wikidata item, not whoever is in
+    // office today.
+    const sourcesByUrl = new Map<string, Source>();
+    for (const term of list) sourcesByUrl.set(term.source.url, term.source);
+    for (const e of countryElections.values()) sourcesByUrl.set(e.source.url, e.source);
+
     const history: PoliticalHistory = {
       id,
       terms: list,
       elections: [...countryElections.values()].sort((a, b) => b.date.localeCompare(a.date)),
-      sources: [wikidataSource(list[0].personQid)],
+      sources: [...sourcesByUrl.values()],
     };
     await writeFile(path.join(OUT_DIR, `${id}.json`), JSON.stringify(history), 'utf-8');
     totalTerms += list.length;
