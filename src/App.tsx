@@ -26,6 +26,8 @@ export default function App() {
   const [relationships, setRelationships] = useState<Relationship[]>([]);
   const [sourcesOpen, setSourcesOpen] = useState(false);
   const [globalNewsOpen, setGlobalNewsOpen] = useState(false);
+  const [loadError, setLoadError] = useState(false);
+  const [loadAttempt, setLoadAttempt] = useState(0);
   // Easter egg: clicking the USA on the globe rains a caricature down the screen.
   // The counter (not a boolean) is used as a key so re-clicking mid-rain restarts it cleanly.
   const [rainKey, setRainKey] = useState<number | null>(null);
@@ -37,11 +39,20 @@ export default function App() {
   const mode = useTimeStore((s) => s.mode);
 
   useEffect(() => {
-    fetchCountryIndex().then(setCountryIndex);
-    fetchWorldGeometry().then(setGeometry);
-    fetchEvents().then(setEvents);
-    fetchRelationships().then(setRelationships);
-  }, []);
+    let cancelled = false;
+    setLoadError(false);
+    Promise.all([
+      fetchCountryIndex().then((v) => !cancelled && setCountryIndex(v)),
+      fetchWorldGeometry().then((v) => !cancelled && setGeometry(v)),
+      fetchEvents().then((v) => !cancelled && setEvents(v)),
+      fetchRelationships().then((v) => !cancelled && setRelationships(v)),
+    ]).catch(() => {
+      if (!cancelled) setLoadError(true);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [loadAttempt]);
 
   const countryMap = useMemo(() => new Map(countryIndex.map((c) => [c.id, c])), [countryIndex]);
   const disputedIds = useMemo(
@@ -84,7 +95,14 @@ export default function App() {
       </header>
 
       <main className="app-main">
-        {loading ? (
+        {loadError ? (
+          <div className="app-loading">
+            <p>Couldn't load the atlas. Check your connection and try again.</p>
+            <button className="app-loading__retry" onClick={() => setLoadAttempt((n) => n + 1)}>
+              Retry
+            </button>
+          </div>
+        ) : loading ? (
           <div className="app-loading">
             <div className="app-loading__spinner" />
             <p>Loading the atlas…</p>

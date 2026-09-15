@@ -79,9 +79,13 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
       return;
     }
     let active = true;
-    fetchPoliticalHistory(selectedCountryId).then((history) => {
-      if (active) setPolitics(history);
-    });
+    fetchPoliticalHistory(selectedCountryId)
+      .then((history) => {
+        if (active) setPolitics(history);
+      })
+      .catch(() => {
+        // A non-404 failure just leaves the timeline without leadership markers.
+      });
     return () => {
       active = false;
     };
@@ -127,7 +131,7 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
             .filter(Boolean)
             .join(' '),
           importance: term.role === 'head-of-government' ? 2 : 1,
-          sources: politics.sources,
+          sources: [term.source],
         });
       }
       for (const election of politics.elections) {
@@ -139,7 +143,7 @@ export function Timeline({ events, selectedCountryId, selectedCountryName }: Tim
           tone: 'accent',
           date: election.date,
           importance: 2,
-          sources: politics.sources,
+          sources: [election.source],
         });
       }
     }

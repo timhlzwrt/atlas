@@ -112,12 +112,16 @@ export interface LeadershipTerm {
   party?: string;
   /** Elections this term was won at — a re-elected leader has more than one. */
   elections: PoliticalElection[];
+  /** This officeholder's own Wikidata item, not whoever is currently in office. */
+  source: Source;
 }
 
 export interface PoliticalElection {
   id: string;
   label: string;
   date: string; // ISO date
+  /** This election's own Wikidata item. */
+  source: Source;
 }
 
 /**

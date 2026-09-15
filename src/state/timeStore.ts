@@ -1,7 +1,5 @@
 import { create } from 'zustand';
 
-export const PRESENT_YEAR = new Date().getFullYear();
-
 /**
  * The atlas covers the post-1945 order only. Everything upstream — the curated
  * events, the Wikidata leadership record — is filtered to this at build time,
@@ -24,16 +22,18 @@ interface TimeState {
   setShowPolitics: (show: boolean) => void;
 }
 
-const today = new Date().toISOString().slice(0, 10);
+const todayIso = () => new Date().toISOString().slice(0, 10);
 
 export const useTimeStore = create<TimeState>((set) => ({
   mode: 'present',
-  selectedDate: today,
+  selectedDate: todayIso(),
   selectedEventId: null,
   timelineScope: 'world',
   showPolitics: true,
 
-  goToPresent: () => set({ mode: 'present', selectedDate: today, selectedEventId: null }),
+  // Recomputed at call time, not the module-load-time value above - a tab
+  // left open past midnight should still land on the real current date.
+  goToPresent: () => set({ mode: 'present', selectedDate: todayIso(), selectedEventId: null }),
   selectEvent: (eventId, date) => set({ mode: 'historical', selectedEventId: eventId, selectedDate: date }),
   setTimelineScope: (scope) => set({ timelineScope: scope }),
   setShowPolitics: (show) => set({ showPolitics: show }),
