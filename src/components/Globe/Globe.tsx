@@ -33,6 +33,36 @@ interface GlobeProps {
 
 const CARD_MARGIN = 140;
 const EDGE_PADDING = 16;
+// Must match the 20px gap in countryCard.css's translate(20px, -50%) /
+// translate(calc(-100% - 20px), -50%) rules.
+const CARD_GAP = 20;
+
+/**
+ * Shared by tick(), handleDragPointerMove and clampToViewport so the three
+ * places that can move the anchor can't drift out of sync with each other -
+ * they previously duplicated this math by hand, and only 2 of the 3 kept
+ * `side` up to date, which could leave the card offset toward the wrong edge
+ * (or overlapping the country marker) after a resize-triggered re-clamp.
+ *
+ * The card sits entirely to one side of the anchor (not centred on it like
+ * the Y axis), so the X margin has to clear the card's own width plus the
+ * CSS gap, not just a flat constant - otherwise an expanded (380px) card
+ * can overflow the edge it's being pushed *toward* on a narrower viewport.
+ */
+function clampAnchorPosition(
+  x: number,
+  y: number,
+  card: HTMLElement | null,
+  width: number,
+  height: number,
+): { x: number; y: number; side: 'left' | 'right' } {
+  const cardHalfHeight = (card?.clientHeight ?? 0) / 2;
+  const yMargin = Math.max(CARD_MARGIN, cardHalfHeight + EDGE_PADDING);
+  const xMargin = Math.max(CARD_MARGIN, (card?.clientWidth ?? 0) + CARD_GAP + EDGE_PADDING);
+  const clampedX = Math.min(Math.max(x, xMargin), width - xMargin);
+  const clampedY = Math.min(Math.max(y, yMargin), height - yMargin);
+  return { x: clampedX, y: clampedY, side: clampedX > width / 2 ? 'left' : 'right' };
+}
 
 export interface GlobeHandle {
   flyToCountry: (id: string, altitude?: number) => void;
@@ -178,16 +208,11 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       if (!centroid) return;
       const [lng, lat] = centroid;
       const { x, y } = globeRef.current.getScreenCoords(lat, lng, 0.02);
-      const clampedX = Math.min(Math.max(x, CARD_MARGIN), size.width - CARD_MARGIN);
-      // The card is vertically centred on the anchor, so clamp against its real
-      // height — an expanded card is several hundred pixels tall and would
-      // otherwise hang off the top of the viewport for northern countries.
-      const cardHalfHeight = (anchor.firstElementChild?.clientHeight ?? 0) / 2;
-      const yMargin = Math.max(CARD_MARGIN, cardHalfHeight + EDGE_PADDING);
-      const clampedY = Math.min(Math.max(y, yMargin), size.height - yMargin);
+      const card = anchor.firstElementChild as HTMLElement | null;
+      const { x: clampedX, y: clampedY, side } = clampAnchorPosition(x, y, card, size.width, size.height);
       anchor.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
       anchor.style.opacity = '1';
-      anchor.dataset.side = clampedX > size.width / 2 ? 'left' : 'right';
+      anchor.dataset.side = side;
       lastPosRef.current = { x: clampedX, y: clampedY };
     };
     rafRef.current = requestAnimationFrame(tick);
@@ -210,14 +235,12 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
     if (!anchor) return;
     const { pointerX, pointerY, anchorX, anchorY } = dragStartRef.current;
     const { width, height } = sizeRef.current;
-    const cardHalfHeight = (anchor.firstElementChild?.clientHeight ?? 0) / 2;
-    const yMargin = Math.max(CARD_MARGIN, cardHalfHeight + EDGE_PADDING);
+    const card = anchor.firstElementChild as HTMLElement | null;
     const nextX = anchorX + (e.clientX - pointerX);
     const nextY = anchorY + (e.clientY - pointerY);
-    const clampedX = Math.min(Math.max(nextX, CARD_MARGIN), width - CARD_MARGIN);
-    const clampedY = Math.min(Math.max(nextY, yMargin), height - yMargin);
+    const { x: clampedX, y: clampedY, side } = clampAnchorPosition(nextX, nextY, card, width, height);
     anchor.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
-    anchor.dataset.side = clampedX > width / 2 ? 'left' : 'right';
+    anchor.dataset.side = side;
     lastPosRef.current = { x: clampedX, y: clampedY };
   }, []);
 
@@ -265,12 +288,10 @@ const Globe = forwardRef<GlobeHandle, GlobeProps>(function Globe(
       const pos = lastPosRef.current;
       if (!pos) return; // tick() hasn't placed the card yet — nothing to clamp
       const { x, y } = pos;
-      const cardHalfHeight = card.clientHeight / 2;
-      const yMargin = Math.max(CARD_MARGIN, cardHalfHeight + EDGE_PADDING);
-      const clampedX = Math.min(Math.max(x, CARD_MARGIN), width - CARD_MARGIN);
-      const clampedY = Math.min(Math.max(y, yMargin), height - yMargin);
+      const { x: clampedX, y: clampedY, side } = clampAnchorPosition(x, y, card, width, height);
       if (clampedX === x && clampedY === y) return;
       anchor.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
+      anchor.dataset.side = side;
       lastPosRef.current = { x: clampedX, y: clampedY };
     };
     const observer = new ResizeObserver(clampToViewport);
