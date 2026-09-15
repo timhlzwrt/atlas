@@ -110,9 +110,12 @@ async function main() {
     // country's record, not just the most recent officeholder's - a term
     // from decades ago cites its own Wikidata item, not whoever is in
     // office today.
+    // Non-null: this file is the only producer of LeadershipTerm/PoliticalElection
+    // and always sets `source` above - it's optional on the type only because
+    // older generated JSON on disk predates the field.
     const sourcesByUrl = new Map<string, Source>();
-    for (const term of list) sourcesByUrl.set(term.source.url, term.source);
-    for (const e of countryElections.values()) sourcesByUrl.set(e.source.url, e.source);
+    for (const term of list) sourcesByUrl.set(term.source!.url, term.source!);
+    for (const e of countryElections.values()) sourcesByUrl.set(e.source!.url, e.source!);
 
     const history: PoliticalHistory = {
       id,
